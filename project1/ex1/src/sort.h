@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
-
+#include <limits.h>
 void InsertionSort(int *a, int n);
-void QuickSort(int *a, int n);
+void QuickSort(int *a, int start, int end);
 void HeapSort(int *a, int n);
 void MergeSort(int *a, int start, int end);
 void CountingSort(int *a, int *b, int length, int n);
