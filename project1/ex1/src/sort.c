@@ -8,8 +8,8 @@ int CopyAndCheck(int *a, int *b, int n);
 
 int main()
 {
-    int n, *array, size, *save, *result, k,*t;
-    int start,end;
+    int n, *array, size, *save, *result, k, *t;
+    int start, end;
     //print README
     printf("***README***\n");
     printf("————————————————————————————————————————————————————————————————\n");
@@ -30,8 +30,14 @@ int main()
     array = (int *)calloc(size, sizeof(int));
     save = (int *)calloc(size, sizeof(int));
     result = (int *)calloc(size, sizeof(int));
-    t=(int *)calloc(k*5,sizeof(int));
+    t = (int *)calloc(k * 5, sizeof(int));
     srand(time(NULL));
+
+    while (k>0)
+    {
+        
+    }
+    
     for (int i = 0; i < size; i++)
     {
         array[i] = rand();
@@ -39,6 +45,15 @@ int main()
     }
     //Insertion Sort
     InsertionSort(array, size);
+    CopyAndCheck(array, save, size);
+    MergeSort(array, 0, size - 1);
+    CopyAndCheck(array, save, size);
+    HeapSort(array, size);
+    CopyAndCheck(array, save, size);
+    QuickSort(array, 0, size - 1);
+    CopyAndCheck(array, save, size);
+    CountingSort(array, result, RAND_MAX, size);
+    CopyAndCheck(array, save, size);
 
     printf("Ending...\n");
     free(array);
