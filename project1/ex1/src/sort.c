@@ -1,4 +1,4 @@
-
+#include <windows.h>
 #include "sort.h"
 int in[262144];
 int CopyAndCheck(int *a, int *b, int n);
@@ -7,7 +7,7 @@ int main()
 {
     FILE *f_in, *f_out, *f_time;
     int n, *array, *save, *result, k, *t;
-    int tt[6];
+    double tt[6];
     int begintime, endtime;
     long size;
     int start, end;
@@ -28,6 +28,19 @@ int main()
     if (f_in == NULL)
         printf("Fail to open input.txt.\n");
 
+    double run_time;
+    LARGE_INTEGER time_start; //开始时间
+    LARGE_INTEGER time_over;  //结束时间
+    double dqFreq;            //计时器频率
+    LARGE_INTEGER f;          //计时器频率
+    QueryPerformanceFrequency(&f);
+    dqFreq = (double)f.QuadPart;
+    QueryPerformanceCounter(&time_start); //计时开始
+
+    QueryPerformanceCounter(&time_over); //计时结束
+    run_time = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
+    //乘以1000000把单位由秒化为微秒，精度为1000 000/（cpu主频）微秒
+
     srand(time(NULL));
 
     for (int i = 0; i < size; i++)
@@ -40,16 +53,16 @@ int main()
     //Insertion Sort
     printf("size 2^3,start\n");
     size = pow(2, 3);
-    begintime = clock();
+    QueryPerformanceCounter(&time_start);
     InsertionSort(in, size);
-    endtime = clock();
+ QueryPerformanceCounter(&time_over); 
     f_out = fopen("../output/insertion_sort/result_3.txt", "w");
     for (int i = 0; i < size; i++)
     {
         fprintf(f_out, "%d\n", in[i]);
     }
     fclose(f_out);
-    tt[0] = endtime - begintime;
+    tt[0] = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
     printf("size 2^3,end\n");
 
     printf("size 2^6,start\n");
@@ -58,16 +71,16 @@ int main()
     for (int i = 0; i < size; i++)
         fscanf(f_in, "%d\n", &in[i]);
     fclose(f_in);
-    begintime = clock();
+    QueryPerformanceCounter(&time_start);
     InsertionSort(in, size);
-    endtime = clock();
+ QueryPerformanceCounter(&time_over); 
     f_out = fopen("../output/insertion_sort/result_6.txt", "w");
     for (int i = 0; i < size; i++)
     {
         fprintf(f_out, "%d\n", in[i]);
     }
     fclose(f_out);
-    tt[1] = endtime - begintime;
+    tt[1] = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
     printf("size 2^6,end\n");
 
     printf("size 2^9,start\n");
@@ -76,16 +89,16 @@ int main()
     for (int i = 0; i < size; i++)
         fscanf(f_in, "%d\n", &in[i]);
     fclose(f_in);
-    begintime = clock();
+  QueryPerformanceCounter(&time_start);
     InsertionSort(in, size);
-    endtime = clock();
+ QueryPerformanceCounter(&time_over); 
     f_out = fopen("../output/insertion_sort/result_9.txt", "w");
     for (int i = 0; i < size; i++)
     {
         fprintf(f_out, "%d\n", in[i]);
     }
     fclose(f_out);
-    tt[2] = endtime - begintime;
+    tt[2] = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
     printf("size 2^9,end\n");
 
     printf("size 2^12,start\n");
@@ -94,9 +107,9 @@ int main()
     for (int i = 0; i < size; i++)
         fscanf(f_in, "%d\n", &in[i]);
     fclose(f_in);
-    begintime = clock();
+   QueryPerformanceCounter(&time_start);
     InsertionSort(in, size);
-    endtime = clock();
+QueryPerformanceCounter(&time_over); 
     f_out = fopen("../output/insertion_sort/result_12.txt", "w");
     for (int i = 0; i < size; i++)
     {
@@ -112,16 +125,16 @@ int main()
     for (int i = 0; i < size; i++)
         fscanf(f_in, "%d\n", &in[i]);
     fclose(f_in);
-    begintime = clock();
+   QueryPerformanceCounter(&time_start);
     InsertionSort(in, size);
-    endtime = clock();
+  QueryPerformanceCounter(&time_over); 
     f_out = fopen("../output/insertion_sort/result_15.txt", "w");
     for (int i = 0; i < size; i++)
     {
         fprintf(f_out, "%d\n", in[i]);
     }
     fclose(f_out);
-    tt[4] = endtime - begintime;
+    tt[4] = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
     printf("size 2^15,end\n");
 
     printf("size 2^18,start\n");
@@ -130,23 +143,23 @@ int main()
     for (int i = 0; i < size; i++)
         fscanf(f_in, "%d\n", &in[i]);
     fclose(f_in);
-    begintime = clock();
+  QueryPerformanceCounter(&time_start);
     InsertionSort(in, size);
-    endtime = clock();
+QueryPerformanceCounter(&time_over); 
     f_out = fopen("../output/insertion_sort/result_18.txt", "w");
     for (int i = 0; i < size; i++)
     {
         fprintf(f_out, "%d\n", in[i]);
     }
     fclose(f_out);
-    tt[5] = endtime - begintime;
+    tt[5] = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
 
     f_out = fopen("../output/insertion_sort/time.txt", "w");
     for (int i = 0; i < 6; i++)
-        fprintf(f_out, "%d\n", tt[i]);
+        fprintf(f_out, "%lf\n", tt[i]);
     fclose(f_out);
     printf("size 2^18,end\n");
-    return;
+
     /*
     save = (int *)calloc(size, sizeof(int));
     result = (int *)calloc(size, sizeof(int));
