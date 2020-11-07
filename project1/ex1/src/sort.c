@@ -55,7 +55,7 @@ int main()
     size = pow(2, 3);
     QueryPerformanceCounter(&time_start);
     InsertionSort(in, size);
- QueryPerformanceCounter(&time_over); 
+    QueryPerformanceCounter(&time_over);
     f_out = fopen("../output/insertion_sort/result_3.txt", "w");
     for (int i = 0; i < size; i++)
     {
@@ -73,7 +73,7 @@ int main()
     fclose(f_in);
     QueryPerformanceCounter(&time_start);
     InsertionSort(in, size);
- QueryPerformanceCounter(&time_over); 
+    QueryPerformanceCounter(&time_over);
     f_out = fopen("../output/insertion_sort/result_6.txt", "w");
     for (int i = 0; i < size; i++)
     {
@@ -89,9 +89,9 @@ int main()
     for (int i = 0; i < size; i++)
         fscanf(f_in, "%d\n", &in[i]);
     fclose(f_in);
-  QueryPerformanceCounter(&time_start);
+    QueryPerformanceCounter(&time_start);
     InsertionSort(in, size);
- QueryPerformanceCounter(&time_over); 
+    QueryPerformanceCounter(&time_over);
     f_out = fopen("../output/insertion_sort/result_9.txt", "w");
     for (int i = 0; i < size; i++)
     {
@@ -107,9 +107,9 @@ int main()
     for (int i = 0; i < size; i++)
         fscanf(f_in, "%d\n", &in[i]);
     fclose(f_in);
-   QueryPerformanceCounter(&time_start);
+    QueryPerformanceCounter(&time_start);
     InsertionSort(in, size);
-QueryPerformanceCounter(&time_over); 
+    QueryPerformanceCounter(&time_over);
     f_out = fopen("../output/insertion_sort/result_12.txt", "w");
     for (int i = 0; i < size; i++)
     {
@@ -125,9 +125,9 @@ QueryPerformanceCounter(&time_over);
     for (int i = 0; i < size; i++)
         fscanf(f_in, "%d\n", &in[i]);
     fclose(f_in);
-   QueryPerformanceCounter(&time_start);
+    QueryPerformanceCounter(&time_start);
     InsertionSort(in, size);
-  QueryPerformanceCounter(&time_over); 
+    QueryPerformanceCounter(&time_over);
     f_out = fopen("../output/insertion_sort/result_15.txt", "w");
     for (int i = 0; i < size; i++)
     {
@@ -143,9 +143,9 @@ QueryPerformanceCounter(&time_over);
     for (int i = 0; i < size; i++)
         fscanf(f_in, "%d\n", &in[i]);
     fclose(f_in);
-  QueryPerformanceCounter(&time_start);
+    QueryPerformanceCounter(&time_start);
     InsertionSort(in, size);
-QueryPerformanceCounter(&time_over); 
+    QueryPerformanceCounter(&time_over);
     f_out = fopen("../output/insertion_sort/result_18.txt", "w");
     for (int i = 0; i < size; i++)
     {
