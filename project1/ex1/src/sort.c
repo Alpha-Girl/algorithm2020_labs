@@ -95,7 +95,7 @@ int main()
     InsertionSort(in, size);
     QueryPerformanceCounter(&time_over);
     WriteData("../output/insertion_sort/result_12.txt", in, size);
-    tt[3] = endtime - begintime;
+    tt[3] = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
     printf("size 2^12,end\n");
 
     printf("size 2^15,start\n");
@@ -163,7 +163,7 @@ int main()
     MergeSort(in, 0, size - 1);
     QueryPerformanceCounter(&time_over);
     WriteData("../output/merge_sort/result_12.txt", in, size);
-    tt[3] = endtime - begintime;
+    tt[3] = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
     printf("size 2^12,end\n");
 
     printf("size 2^15,start\n");
@@ -190,7 +190,7 @@ int main()
     WriteTime("../output/merge_sort/time.txt", tt, 6);
 
     printf("Finished 3.\n");
-*/
+
     //Heap Sort
     printf("----------------------------------------------------------------\n");
     printf("4.HeapSort Starting\n");
@@ -231,7 +231,7 @@ int main()
     HeapSort(in, size);
     QueryPerformanceCounter(&time_over);
     WriteDatah("../output/heap_sort/result_12.txt", in, size);
-    tt[3] = endtime - begintime;
+    tt[3] = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
     printf("size 2^12,end\n");
 
     printf("size 2^15,start\n");
@@ -258,6 +258,74 @@ int main()
     WriteTime("../output/heap_sort/time.txt", tt, 6);
 
     printf("Finished 4.\n");
+*/
+    //Quick Sort
+    printf("----------------------------------------------------------------\n");
+    printf("5.HeapSort Starting\n");
+    printf("size 2^3,start\n");
+    size = pow(2, 3);
+    ReadData(size);
+    QueryPerformanceCounter(&time_start);
+    QuickSort(in, 0, size - 1);
+    QueryPerformanceCounter(&time_over);
+    WriteData("../output/quick_sort/result_3.txt", in, size);
+    tt[0] = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
+    printf("size 2^3,end\n");
+
+    printf("size 2^6,start\n");
+    size = pow(2, 6);
+    ReadData(size);
+    QueryPerformanceCounter(&time_start);
+    QuickSort(in, 0, size - 1);
+    QueryPerformanceCounter(&time_over);
+    WriteData("../output/quick_sort/result_6.txt", in, size);
+    tt[1] = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
+    printf("size 2^6,end\n");
+
+    printf("size 2^9,start\n");
+    size = pow(2, 9);
+    ReadData(size);
+    QueryPerformanceCounter(&time_start);
+    QuickSort(in, 0, size - 1);
+    QueryPerformanceCounter(&time_over);
+    WriteData("../output/quick_sort/result_9.txt", in, size);
+    tt[2] = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
+    printf("size 2^9,end\n");
+
+    printf("size 2^12,start\n");
+    size = pow(2, 12);
+    ReadData(size);
+    QueryPerformanceCounter(&time_start);
+    QuickSort(in, 0, size - 1);
+    QueryPerformanceCounter(&time_over);
+    WriteData("../output/quick_sort/result_12.txt", in, size);
+    tt[3] = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
+    printf("size 2^12,end\n");
+
+    printf("size 2^15,start\n");
+    size = pow(2, 15);
+    ReadData(size);
+    QueryPerformanceCounter(&time_start);
+    QuickSort(in, 0, size - 1);
+    QueryPerformanceCounter(&time_over);
+    WriteData("../output/quick_sort/result_15.txt", in, size);
+    tt[4] = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
+    printf("size 2^15,end\n");
+
+    printf("size 2^18,start\n");
+    size = pow(2, 18);
+    ReadData(size);
+    QueryPerformanceCounter(&time_start);
+    QuickSort(in, 0, size - 1);
+    QueryPerformanceCounter(&time_over);
+    WriteData("../output/quick_sort/result_18.txt", in, size);
+    tt[5] = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
+    printf("size 2^18,end\n");
+
+    printf("Writing time.txt.\n");
+    WriteTime("../output/quick_sort/time.txt", tt, 6);
+
+    printf("Finished 5.\n");
     /*
     save = (int *)calloc(size, sizeof(int));
     result = (int *)calloc(size, sizeof(int));
