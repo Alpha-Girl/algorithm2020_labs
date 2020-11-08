@@ -80,17 +80,17 @@ void exchange(int *a, int *b)
 
 int Left(int i)
 {
-    return 2 * i - 1;
+    return 2 *i;
 }
 
 int right(int i)
 {
-    return 2 * i;
+    return 2 * i+1;
 }
 
 int parent(int i)
 {
-    return (i - 1) / 2;
+    return i/2;
 }
 
 void MaxHeapify(int *a, int target, int n)
@@ -98,34 +98,34 @@ void MaxHeapify(int *a, int target, int n)
     int l, r, largest;
     l = Left(target);
     r = right(target);
-    if (l < n && a[l] > a[target])
+    if (l <= n && a[l] > a[target])
         largest = l;
     else
         largest = target;
-    if (r < n && a[r] > a[largest])
+    if (r <= n && a[r] > a[largest])
         largest = r;
     if (largest != target)
     {
-        exchange(&a[target], &a[target]);
+        exchange(&a[largest], &a[target]);
         MaxHeapify(a, largest, n);
     }
 }
 
 void BuildMaxHeap(int *a, int n)
 {
-    for (int i = (n - 1) / 2; i >= 0; i--)
-        MaxHeapify(a, 0, n);
+    for (int i = n / 2; i >= 1; i--)
+        MaxHeapify(a, i, n);
 }
 
 void HeapSort(int *a, int n)
 {
     int size = n;
     BuildMaxHeap(a, n);
-    for (int i = n - 1; i > 0; i--)
+    for (int i = n ; i > 1; i--)
     {
-        exchange(&a[0], &a[i]);
+        exchange(&a[1], &a[i]);
         size--;
-        MaxHeapify(a, 0, size);
+        MaxHeapify(a,1, size);
     }
 }
 

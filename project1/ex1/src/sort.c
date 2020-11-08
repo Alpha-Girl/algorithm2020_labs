@@ -1,9 +1,11 @@
 #include <windows.h>
 #include "sort.h"
-int in[262144];
+int in[262145];
 int CopyAndCheck(int *a, int *b, int n);
 void ReadData(int n);
+void ReadDatah(int n);
 void WriteData(char *filename, int *a, int n);
+void WriteDatah(char *filename, int *a, int n);
 void WriteTime(char *filename, double *a, int n);
 int main()
 {
@@ -52,6 +54,7 @@ int main()
     }
     fclose(f_in);
     printf("Finished 1.\n");
+    /*
     //Insertion Sort
     printf("----------------------------------------------------------------\n");
     printf("2.InsertionSort Starting\n");
@@ -187,74 +190,74 @@ int main()
     WriteTime("../output/merge_sort/time.txt", tt, 6);
 
     printf("Finished 3.\n");
-
+*/
     //Heap Sort
     printf("----------------------------------------------------------------\n");
-    printf("3.MergeSort Starting\n");
+    printf("4.HeapSort Starting\n");
     printf("size 2^3,start\n");
     size = pow(2, 3);
-    ReadData(size);
+    ReadDatah(size);
     QueryPerformanceCounter(&time_start);
-    MergeSort(in, 0, size - 1);
+    HeapSort(in, size);
     QueryPerformanceCounter(&time_over);
-    WriteData("../output/merge_sort/result_3.txt", in, size);
+    WriteDatah("../output/heap_sort/result_3.txt", in, size);
     tt[0] = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
     printf("size 2^3,end\n");
 
     printf("size 2^6,start\n");
     size = pow(2, 6);
-    ReadData(size);
+    ReadDatah(size);
     QueryPerformanceCounter(&time_start);
-    MergeSort(in, 0, size - 1);
+    HeapSort(in, size);
     QueryPerformanceCounter(&time_over);
-    WriteData("../output/merge_sort/result_6.txt", in, size);
+    WriteDatah("../output/heap_sort/result_6.txt", in, size);
     tt[1] = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
     printf("size 2^6,end\n");
 
     printf("size 2^9,start\n");
     size = pow(2, 9);
-    ReadData(size);
+    ReadDatah(size);
     QueryPerformanceCounter(&time_start);
-    MergeSort(in, 0, size - 1);
+    HeapSort(in, size);
     QueryPerformanceCounter(&time_over);
-    WriteData("../output/merge_sort/result_9.txt", in, size);
+    WriteDatah("../output/heap_sort/result_9.txt", in, size);
     tt[2] = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
     printf("size 2^9,end\n");
 
     printf("size 2^12,start\n");
     size = pow(2, 12);
-    ReadData(size);
+    ReadDatah(size);
     QueryPerformanceCounter(&time_start);
-    MergeSort(in, 0, size - 1);
+    HeapSort(in, size);
     QueryPerformanceCounter(&time_over);
-    WriteData("../output/merge_sort/result_12.txt", in, size);
+    WriteDatah("../output/heap_sort/result_12.txt", in, size);
     tt[3] = endtime - begintime;
     printf("size 2^12,end\n");
 
     printf("size 2^15,start\n");
     size = pow(2, 15);
-    ReadData(size);
+    ReadDatah(size);
     QueryPerformanceCounter(&time_start);
-    MergeSort(in, 0, size - 1);
+    HeapSort(in, size);
     QueryPerformanceCounter(&time_over);
-    WriteData("../output/merge_sort/result_15.txt", in, size);
+    WriteDatah("../output/heap_sort/result_15.txt", in, size);
     tt[4] = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
     printf("size 2^15,end\n");
 
     printf("size 2^18,start\n");
     size = pow(2, 18);
-    ReadData(size);
+    ReadDatah(size);
     QueryPerformanceCounter(&time_start);
-    MergeSort(in, 0, size - 1);
+    HeapSort(in, size);
     QueryPerformanceCounter(&time_over);
-    WriteData("../output/merge_sort/result_18.txt", in, size);
+    WriteDatah("../output/heap_sort/result_18.txt", in, size);
     tt[5] = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
     printf("size 2^18,end\n");
 
     printf("Writing time.txt.\n");
-    WriteTime("../output/merge_sort/time.txt", tt, 6);
+    WriteTime("../output/heap_sort/time.txt", tt, 6);
 
-    printf("Finished 3.\n");
+    printf("Finished 4.\n");
     /*
     save = (int *)calloc(size, sizeof(int));
     result = (int *)calloc(size, sizeof(int));
@@ -312,6 +315,14 @@ void ReadData(int n)
         fscanf(f_in, "%d\n", &in[i]);
     fclose(f_in);
 }
+void ReadDatah(int n)
+{
+    FILE *f_in;
+    f_in = fopen("../input/input.txt", "r");
+    for (int i = 1; i <= n; i++)
+        fscanf(f_in, "%d\n", &in[i]);
+    fclose(f_in);
+}
 void WriteData(char *filename, int *a, int n)
 {
     FILE *f_out;
@@ -322,7 +333,16 @@ void WriteData(char *filename, int *a, int n)
     }
     fclose(f_out);
 }
-
+void WriteDatah(char *filename, int *a, int n)
+{
+    FILE *f_out;
+    f_out = fopen(filename, "w");
+    for (int i = 1; i <= n; i++)
+    {
+        fprintf(f_out, "%d\n", a[i]);
+    }
+    fclose(f_out);
+}
 void WriteTime(char *filename, double *a, int n)
 {
     FILE *f_out;
