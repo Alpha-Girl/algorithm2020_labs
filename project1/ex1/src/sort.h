@@ -34,9 +34,9 @@ void Merge(int *a, int start, int q, int end)
     L = (int *)calloc(m + 1, sizeof(int));
     R = (int *)calloc(n + 1, sizeof(int));
     for (i = 0; i < m; i++)
-        L[i] = a[start + i - 1];
-    for (j = 0; j < n; j++)
-        R[j] = a[q + j];
+        L[i] = a[start + i];
+    for (j = 1; j <= n; j++)
+        R[j - 1] = a[q + j];
     L[m] = INT_MAX;
     R[n] = INT_MAX;
     i = 0;
