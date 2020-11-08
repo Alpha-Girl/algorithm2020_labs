@@ -80,17 +80,17 @@ void exchange(int *a, int *b)
 
 int Left(int i)
 {
-    return 2 *i;
+    return 2 * i;
 }
 
 int right(int i)
 {
-    return 2 * i+1;
+    return 2 * i + 1;
 }
 
 int parent(int i)
 {
-    return i/2;
+    return i / 2;
 }
 
 void MaxHeapify(int *a, int target, int n)
@@ -121,11 +121,11 @@ void HeapSort(int *a, int n)
 {
     int size = n;
     BuildMaxHeap(a, n);
-    for (int i = n ; i > 1; i--)
+    for (int i = n; i > 1; i--)
     {
         exchange(&a[1], &a[i]);
         size--;
-        MaxHeapify(a,1, size);
+        MaxHeapify(a, 1, size);
     }
 }
 
@@ -159,15 +159,20 @@ void QuickSort(int *a, int start, int end)
 //Counting Sort
 void CountingSort(int *a, int *b, int length, int n)
 {
-    int *c, i, j;
-    c = (int *)calloc(length, sizeof(int));
-    for (i = 0; i < length; i++)
+    int i, j;
+
+    int *c = (int *)calloc(length + 1, sizeof(int));
+    for (i = 0; i <= length; i++)
         c[i] = 0;
+
     for (j = 0; j < n; j++)
+
         c[a[j]] = c[a[j]] + 1;
-    for (i = 1; i < length; i++)
+
+    for (i = 1; i <= length; i++)
         c[i] = c[i] + c[i - 1];
-    for (j = n - 1; j >= 0; j++)
+
+    for (j = n - 1; j >= 0; j--)
     {
         b[c[a[j]] - 1] = a[j];
         c[a[j]] = c[a[j]] - 1;
