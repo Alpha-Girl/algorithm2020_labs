@@ -12,19 +12,19 @@ void WriteTime(char *filename, double *a, int n);
 int main()
 {
     FILE *f_in;
-    int n, *t;
-    double tt[6];
+    int n;
+    double tt[6]; //store the time used
     long size;
+
     //print README
     printf("***README***\n");
     printf("----------------------------------------------------------------\n");
-    printf("The sort.exe will 'k' arraies, of which size are 'n' of 2,\n");
-    printf("using InsertionSort,QuickSort,HeapSort,MergeSort,andCountingSort.\n");
-    printf("Then it will output the average time of each algorithm.\n");
-    printf("----------------------------------------------------------------\n");
-    //get parameter
+    printf("The sort.exe will use InsertionSort, QuickSort, HeapSort, MergeSort\n");
+    printf(", and CountingSort to sort arraies in different size.\n");
+    printf("Then it will output the average time and result of each algorithm.\n");
     printf("----------------------------------------------------------------\n");
     printf("Starting...\n");
+
     //init
     printf("1.Generate random numbers, store in input.txt.\n");
     size = pow(2, 18);
@@ -40,13 +40,12 @@ int main()
     QueryPerformanceFrequency(&f);
     dqFreq = (double)f.QuadPart;
     QueryPerformanceCounter(&time_start); //计时开始
-
-    QueryPerformanceCounter(&time_over); //计时结束
+    QueryPerformanceCounter(&time_over);  //计时结束
     run_time = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
     //乘以1000000把单位由秒化为微秒，精度为1000 000/（cpu主频）微秒
 
+    //播种随机数，存入input.txt
     srand(time(NULL));
-
     for (int i = 0; i < size; i++)
     {
         in[i] = rand();
@@ -55,6 +54,15 @@ int main()
     fclose(f_in);
     printf("Finished 1.\n");
 
+    //逐一调用排序算法，对2^3-2^18规模的数组进行排序
+    //每次调用：
+    //1.得到数组规模(size)
+    //2.根据规模从input.txt中读取待排序的数据，开始计时
+    //3.调用排序算法
+    //4.结束计时
+    //5.将排序结果存入result_n.txt
+    //6.记录时间
+    //7.若同一算法，各个规模的排序均已完成，将时间(单位us)存入time.txt
     //Insertion Sort
     printf("----------------------------------------------------------------\n");
     printf("2.InsertionSort Starting\n");
@@ -394,55 +402,11 @@ int main()
     WriteTime("../output/counting_sort/time.txt", tt, 6);
 
     printf("Finished 6.\n");
-    /*
-    save = (int *)calloc(size, sizeof(int));
-    result = (int *)calloc(size, sizeof(int));
-    t = (int *)calloc(k * 5, sizeof(int));
-    srand(time(NULL));
-
-    while (k > 0)
-    {
-    }
-
-    for (int i = 0; i < size; i++)
-    {
-        array[i] = rand();
-        save[i] = array[i];
-    }
-    //Insertion Sort
-    InsertionSort(array, size);
-    CopyAndCheck(array, save, size);
-    MergeSort(array, 0, size - 1);
-    CopyAndCheck(array, save, size);
-    HeapSort(array, size);
-    CopyAndCheck(array, save, size);
-    QuickSort(array, 0, size - 1);
-    CopyAndCheck(array, save, size);
-    CountingSort(array, result, RAND_MAX, size);
-    CopyAndCheck(array, save, size);
-
-    printf("Ending...\n");
-    free(array);
-    free(save);
-    free(result);
-    free(t);
-    return 0;
+    //end of sort
+    system("PAUSE");
 }
 
-//copy
-int CopyAndCheck(int *a, int *b, int n)
-{
-    int flag = 1;
-    for (int i = 0; i < n - 1; i++)
-    {
-        if (a[i] > a[i + 1])
-            flag = 0;
-        a[i] = b[i];
-    }
-    a[n - 1] = b[n - 1];
-    return flag;*/
-}
-
+//读入数据
 void ReadData(int n)
 {
     FILE *f_in;
@@ -451,6 +415,8 @@ void ReadData(int n)
         fscanf(f_in, "%d\n", &in[i]);
     fclose(f_in);
 }
+
+//读入数据，用于堆排序
 void ReadDatah(int n)
 {
     FILE *f_in;
@@ -459,6 +425,8 @@ void ReadDatah(int n)
         fscanf(f_in, "%d\n", &in[i]);
     fclose(f_in);
 }
+
+//写回数据
 void WriteData(char *filename, int *a, int n)
 {
     FILE *f_out;
@@ -469,6 +437,8 @@ void WriteData(char *filename, int *a, int n)
     }
     fclose(f_out);
 }
+
+//写回数据，用于堆排序
 void WriteDatah(char *filename, int *a, int n)
 {
     FILE *f_out;
@@ -479,6 +449,8 @@ void WriteDatah(char *filename, int *a, int n)
     }
     fclose(f_out);
 }
+
+//写回时间
 void WriteTime(char *filename, double *a, int n)
 {
     FILE *f_out;
