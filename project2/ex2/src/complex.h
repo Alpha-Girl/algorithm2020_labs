@@ -26,6 +26,12 @@ void multiply(complex *a, complex *b, complex *result)
     result->Im = a->Re * b->Im + a->Im * b->Re;
 }
 
+void equal(complex *a, complex *b)
+{
+    b->Re = a->Re;
+    b->Im = a->Im;
+}
+
 void exp_i(float a, complex *result)
 {
     result->Re = cos(a * M_PI);
