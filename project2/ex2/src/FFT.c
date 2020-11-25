@@ -24,10 +24,8 @@ void recursive_fft(complex *array, complex *result, int length)
     y_1 = (complex *)calloc(n / 2, sizeof(complex));
     for (int i = 0; i < n / 2; i++)
     {
-        a_0[i].Re = array[2 * i].Re;
-        a_0[i].Im = array[2 * i].Im;
-        a_1[i].Re = array[2 * i + 1].Re;
-        a_1[i].Im = array[2 * i + 1].Im;
+        equal(&array[2 * i], &a_0[i]);
+        equal(&array[2 * i + 1], &a_1[i]);
     }
     recursive_fft(a_0, y_0, n / 2);
     recursive_fft(a_1, y_1, n / 2);
@@ -39,5 +37,9 @@ void recursive_fft(complex *array, complex *result, int length)
         multiply(&omiga_n, &omiga, &tmp);
         equal(&tmp, &omiga);
     }
+    free(a_0);
+    free(a_1);
+    free(y_0);
+    free(y_1);
     return;
 }
