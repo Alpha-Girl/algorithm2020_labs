@@ -2,6 +2,8 @@
 #include <malloc.h>
 #include <limits.h>
 #define MAX_LENGTH 100
+void martix_chain_order(long long *array, int length);
+void print_optimal_parens(int i, int j);
 long long m[MAX_LENGTH][MAX_LENGTH];
 int s[MAX_LENGTH][MAX_LENGTH];
 int main()
@@ -34,5 +36,18 @@ void martix_chain_order(long long *array, int length)
                 }
             }
         }
+    }
+}
+
+void print_optimal_parens(int i, int j)
+{
+    if (i == j)
+        printf("A");
+    else
+    {
+        printf("(");
+        print_optimal_parens(i, s[i, j]);
+        print_optimal_parens(s[i, j] + 1, j);
+        printf(")");
     }
 }
