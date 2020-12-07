@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <malloc.h>
 #include <limits.h>
+#include <windows.h>
 #define MAX_LENGTH 100
 
 void martix_chain_order(int *array, int length);
@@ -16,32 +17,66 @@ int ReadData();
 int input[MAX_LENGTH];
 long long m[MAX_LENGTH][MAX_LENGTH];
 int s[MAX_LENGTH][MAX_LENGTH];
+double t[MAX_LENGTH];
 
-FILE *in;
+FILE *in, *out;
 
 int main()
 {
-    FILE *out;
-    int leng;
+    FILE *time;
+    int leng, i = 0, j = 0;
     printf("This is the program to solve martix chain order.\n");
+    long long a = 1;
+    printf("%lld\n", a);
     in = fopen("../input/2_1_input.txt", "r");
-    out = fopen()
-    while (in != EOF)
+    out = fopen("../output/result.txt", "w");
+    time = fopen("../output/time.txt", "w");
+
+    double run_time;
+    LARGE_INTEGER time_start; //开始时间
+    LARGE_INTEGER time_over;  //结束时间
+    double dqFreq;            //计时器频率
+    LARGE_INTEGER f;          //计时器频率
+    QueryPerformanceFrequency(&f);
+    dqFreq = (double)f.QuadPart;
+
+    while (!feof(in))
     {
         leng = ReadData(in);
+        printf("\nsize of input: %d\n", leng);
+
+        QueryPerformanceCounter(&time_start); //计时开始
         martix_chain_order(input, leng);
-        printf("\n");
-        /*for (int i = 1; i <= leng; i++)
+        QueryPerformanceCounter(&time_over); //计时结束
+        run_time = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
+        t[j] = run_time;
+        j++;
+
+        printf("\n array of s[][]:\n");
+        for (i = 1; i <= leng; i++)
         {
             for (int j = 1; j <= leng; j++)
-            {
-                printf("%d ", s[i][j]);
-            }
+                printf("%2d", s[i][j]);
             printf("\n");
-        }*/
-        print_optimal_parens(1, leng);
-    }
+        }
 
+        printf("\n array of m[][]:\n");
+        for (int i = 1; i <= leng; i++)
+        {
+            for (int j = 1; j <= leng; j++)
+                printf("%lld ", m[i][j]);
+            printf("\n");
+        }
+        print_optimal_parens(1, leng);
+        fprintf(out, "%lld\n", m[leng][leng]);
+    }
+    for (i = 0; i < j; i++)
+        fprintf(time, "%lf\n", t[i]);
+    fclose(in);
+    fclose(out);
+    fclose(time);
+    printf("finished");
+    system("PAUSE");
 }
 
 /*********** 
@@ -87,7 +122,7 @@ void martix_chain_order(int *array, int length)
             m[i][j] = LLONG_MAX;
             for (k = i; k <= j - 1; k++)
             {
-                tmp = m[i][k] + m[k + 1][j] + array[i - 1] * array[i] * array[i + 1];
+                tmp = m[i][k] + m[k + 1][j] + (long long)(array[i - 1] * array[i] * array[i + 1]);
                 if (tmp < m[i][j])
                 {
                     m[i][j] = tmp;
@@ -107,12 +142,17 @@ void martix_chain_order(int *array, int length)
 void print_optimal_parens(int i, int j)
 {
     if (i == j)
+    {
         printf("A%d", i);
+        fprintf(out, "A%d", i);
+    }
     else
     {
         printf("(");
+        fprintf(out, "(");
         print_optimal_parens(i, s[i][j]);
         print_optimal_parens(s[i][j] + 1, j);
         printf(")");
+        fprintf(out, ")");
     }
 }
