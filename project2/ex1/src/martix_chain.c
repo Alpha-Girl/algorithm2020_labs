@@ -27,11 +27,11 @@ int ReadData(FILE *f)
 {
     int n;
     int i;
-    fscanf("%d\n",&n);
+    fscanf(f,"%d\n",&n);
     for(i=0;i<n-1;i++){
-        fscanf("%d ",&input[i]);
+        fscanf(f,"%d",&input[i]);
     }
-    fscanf("%d\n",&input[i]);
+    fscanf(f,"%d\n",&input[i]);
     return n;
 }
 
