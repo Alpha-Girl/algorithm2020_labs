@@ -2,15 +2,40 @@
 #include <malloc.h>
 #include <limits.h>
 #define MAX_LENGTH 100
-void martix_chain_order(long long *array, int length);
+void martix_chain_order(int *array, int length);
 void print_optimal_parens(int i, int j);
+int ReadData(FILE *f);
+int input[MAX_LENGTH];
 long long m[MAX_LENGTH][MAX_LENGTH];
 int s[MAX_LENGTH][MAX_LENGTH];
 int main()
 {
+    FILE *in, *out;
+    int leng;
+    printf("This is the program to solve martix chain order.\n");
+    in = fopen("../input/2_1_input.txt", "r");
+    while (in!=EOF)
+    {
+        leng=ReadData(in);
+        martix_chain_order(input,leng);
+        print_optimal_parens(1,leng);
+    }
+    
 }
 
-void martix_chain_order(long long *array, int length)
+int ReadData(FILE *f)
+{
+    int n;
+    int i;
+    fscanf("%d\n",&n);
+    for(i=0;i<n-1;i++){
+        fscanf("%d ",&input[i]);
+    }
+    fscanf("%d\n",&input[i]);
+    return n;
+}
+
+void martix_chain_order(int *array, int length)
 {
     int n = length - 1;
 
@@ -42,7 +67,7 @@ void martix_chain_order(long long *array, int length)
 void print_optimal_parens(int i, int j)
 {
     if (i == j)
-        printf("A");
+        printf("A%d", i);
     else
     {
         printf("(");
