@@ -1,8 +1,8 @@
-/*********** 
-文件名：martix_chain.c 
-作者：胡毅翔 
-学号：PB18000290 
-文件主要功能：读取input.txt中的矩阵规模，并输出矩阵链乘最优方案。 
+/***********
+文件名：martix_chain.c
+作者：胡毅翔
+学号：PB18000290
+文件主要功能：读取input.txt中的矩阵规模，并输出矩阵链乘最优方案。
 ************/
 #include <stdio.h>
 #include <malloc.h>
@@ -39,7 +39,7 @@ int main()
     LARGE_INTEGER f;          //计时器频率
     QueryPerformanceFrequency(&f);
     dqFreq = (double)f.QuadPart;
-
+    int flag = 1;
     while (!feof(in))
     {
         leng = ReadData(in);
@@ -51,24 +51,27 @@ int main()
         run_time = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
         t[j] = run_time;
         j++;
-
-        printf("\n array of s[][]:\n");
-        for (i = 1; i <= leng; i++)
+        if (flag)
         {
-            for (int j = 1; j <= leng; j++)
-                printf("%2d", s[i][j]);
-            printf("\n");
-        }
+            printf("\n array of s[][]:\n");
+            for (i = 1; i <= leng; i++)
+            {
+                for (int j = 1; j <= leng; j++)
+                    printf("%2d", s[i][j]);
+                printf("\n");
+            }
 
-        printf("\n array of m[][]:\n");
-        for (int i = 1; i <= leng; i++)
-        {
-            for (int j = 1; j <= leng; j++)
-                printf("%lld ", m[i][j]);
-            printf("\n");
+            printf("\n array of m[][]:\n");
+            for (int i = 1; i <= leng; i++)
+            {
+                for (int j = 1; j <= leng; j++)
+                    printf("%20.I64d ", m[i][j]);
+                printf("\n");
+            }
+            flag = 0;
         }
         print_optimal_parens(1, leng);
-        fprintf(out, "%lld\n", m[leng][leng]);
+        fprintf(out, "%I64d\n", m[1][leng]);
     }
     for (i = 0; i < j; i++)
         fprintf(time, "%lf\n", t[i]);
@@ -79,11 +82,11 @@ int main()
     system("PAUSE");
 }
 
-/*********** 
-函数名：ReadData 
-函数功能描述：从input.txt中读取一组输入 
-输入参数的类型和意义：无 
-输出参数的类型和意义：无 
+/***********
+函数名：ReadData
+函数功能描述：从input.txt中读取一组输入
+输入参数的类型和意义：无
+输出参数的类型和意义：无
 ************/
 int ReadData()
 {
@@ -98,12 +101,12 @@ int ReadData()
     return n;
 }
 
-/*********** 
-函数名：martix_chain_order 
+/***********
+函数名：martix_chain_order
 函数功能描述：传入矩阵规模数组及矩阵链长度，
 将过程中得到的方案(划分位置及对应的乘法次数)保存到全局数组s[][]和m[][]中
-输入参数的类型和意义：矩阵规模数组(int *)及矩阵链长度(int) 
-输出参数的类型和意义：无 
+输入参数的类型和意义：矩阵规模数组(int *)及矩阵链长度(int)
+输出参数的类型和意义：无
 ************/
 void martix_chain_order(int *array, int length)
 {
@@ -122,7 +125,7 @@ void martix_chain_order(int *array, int length)
             m[i][j] = LLONG_MAX;
             for (k = i; k <= j - 1; k++)
             {
-                tmp = m[i][k] + m[k + 1][j] + (long long)(array[i - 1] * array[i] * array[i + 1]);
+                tmp = m[i][k] + m[k + 1][j] + ((long long)array[i - 1] * (long long)array[k] * (long long)array[j]);
                 if (tmp < m[i][j])
                 {
                     m[i][j] = tmp;
@@ -133,11 +136,11 @@ void martix_chain_order(int *array, int length)
     }
 }
 
-/*********** 
-函数名：print_optimal_parens 
+/***********
+函数名：print_optimal_parens
 函数功能描述：输出第i至第j个矩阵间的最优方案
-输入参数的类型和意义：起始，终止矩阵序号(int) 
-输出参数的类型和意义：无 
+输入参数的类型和意义：起始，终止矩阵序号(int)
+输出参数的类型和意义：无
 ************/
 void print_optimal_parens(int i, int j)
 {
