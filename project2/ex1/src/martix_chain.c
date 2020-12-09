@@ -71,7 +71,7 @@ int main()
             flag = 0;
         }
         print_optimal_parens(1, leng);
-        fprintf(out, "%I64d\n", m[1][leng]);
+        fprintf(out, "\n%I64d\n", m[1][leng]);
     }
     for (i = 0; i < j; i++)
         fprintf(time, "%lf\n", t[i]);
