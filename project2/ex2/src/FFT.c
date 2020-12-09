@@ -2,15 +2,22 @@
 #include <malloc.h>
 #include <windows.h>
 #include "complex.h"
+
 #define MAX_LENGTH 300
-complex arr[MAX_LENGTH];
-complex res[MAX_LENGTH];
-FILE *in, *out, *time;
-double t[MAX_LENGTH];
+
+complex arr[MAX_LENGTH]; //输入
+complex res[MAX_LENGTH]; //输出
+
+FILE *in, *out, *time; //输入文件，输出文件，计时结果文件
+
+double t[MAX_LENGTH]; //计时结果数组
+
 void recursive_fft(complex *array, complex *result, int length);
 int ReadData();
+
 int main()
 {
+    //打开文件
     in = fopen("../input/2_2_input.txt", "r");
     out = fopen("../output/result.txt", "w");
     time = fopen("../output/time.txt", "w");
@@ -24,8 +31,10 @@ int main()
     dqFreq = (double)f.QuadPart;
 
     int flag = 1, leng, j = 0, i;
+
     while (!feof(in))
     {
+        //读取一组输入
         leng = ReadData();
         printf("\nsize of input: %d\n", leng);
 
@@ -35,18 +44,20 @@ int main()
         run_time = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
         t[j] = run_time;
         j++;
+
+        //输出2^3的结果
         if (flag)
         {
             printf("\n result of 2^3:\n");
-            for (i = 0; i <= leng - 1; i++)
-                printf(" %f + i %f ", res[i].Re, res[i].Im);
+            for (i = 0; i < leng; i++)
+                printf(" %f ", res[i].Re);
             printf("\n");
             flag = 0;
         }
-        for (i = 0; i <= leng - 1; i++)
-            fprintf(out, " %f + i %f ", res[i].Re, res[i].Im);
+        for (i = 0; i < leng; i++)
+            fprintf(out, " %f ", res[i].Re);
         fprintf(out, "\n");
-        fprintf(time, "%lf\n", t[j-1]);
+        fprintf(time, "%lf\n", t[j - 1]);
     }
     fclose(in);
     fclose(out);
