@@ -156,7 +156,67 @@ rbt_node *tree_maximum(rbt_node *x)
 
 void rbt_delete_fixup(RBT *T, rbt_node *x)
 {
-    
+    rbt_node *w;
+    while (x != T->nil && x->color == BLACK)
+    {
+        if (x == x->p->left)
+        {
+            w = x->p->right;
+            if (w->color == RED)
+            {
+                w->color = BLACK;
+                x->p->color = RED;
+                left_rotate(T, x->p);
+                w = x->p->right;
+            }
+            if (w->left->color == BLACK && w->right->color == BLACK)
+            {
+                w->color = RED;
+                x = x->p;
+            }
+            else if (w->right->color == BLACK)
+            {
+                w->left->color = BLACK;
+                w->color = RED;
+                right_rotate(T, w);
+                w = x->p->right;
+            }
+            w->color = x->p->color;
+            x->p->color = BLACK;
+            w->right->color = BLACK;
+            left_rotate(T, x->p);
+            x = T->root;
+        }
+        else
+        {
+            w = x->p->left;
+            if (w->color == RED)
+            {
+                w->color = BLACK;
+                x->p->color = RED;
+                right_rotate(T, x->p);
+                w = x->p->left;
+            }
+            if (w->right->color == BLACK && w->left->color == BLACK)
+            {
+                w->color = RED;
+                x = x->p;
+            }
+            else if (w->left->color == BLACK)
+            {
+                w->right->color = BLACK;
+                w->color = RED;
+                left_rotate(T, w);
+                w = x->p->left;
+            }
+            w->color = x->p->color;
+            x->p->color = BLACK;
+            w->left->color = BLACK;
+            right_rotate(T, x->p);
+            x = T->root;
+        }
+    }
+    x->color = BLACK;
 }
 void rbt_delete(RBT *T, rbt_node *z)
 {
