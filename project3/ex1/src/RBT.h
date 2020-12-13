@@ -53,12 +53,51 @@ void right_rotate(RBT *T, rbt_node *x)
     y->right = x;
     x->p = y;
 }
-void rbt_insert_fixup(RBT *T, rbt_node *z){
-    while (z->p->color==RED)
+void rbt_insert_fixup(RBT *T, rbt_node *z)
+{
+    rbt_node *y;
+    while (z->p->color == RED)
     {
-        
+        if (z->p == z->p->p->left)
+        {
+            y = z->p->p->left;
+            if (y->color == RED)
+            {
+                z->p->color = BLACK;
+                y->color = BLACK;
+                z->p->p->color = RED;
+                z = z->p->p;
+            }
+            else if (z == z->p->right)
+            {
+                z = z->p;
+                left_rotate(T, z);
+            }
+            z->p->color = BLACK;
+            z->p->p->color = RED;
+            right_rotate(T, z->p->p);
+        }
+        else
+        {
+            y = z->p->p->right;
+            if (y->color == RED)
+            {
+                z->p->color = BLACK;
+                y->color = BLACK;
+                z->p->p->color = RED;
+                z = z->p->p;
+            }
+            else if (z == z->p->left)
+            {
+                z = z->p;
+                right_rotate(T, z);
+            }
+            z->p->color = BLACK;
+            z->p->p->color = RED;
+            left_rotate(T, z->p->p);
+        }
     }
-    
+    T->root->color = BLACK;
 }
 void rbt_insert(RBT *T, rbt_node *z)
 {
@@ -80,8 +119,78 @@ void rbt_insert(RBT *T, rbt_node *z)
         y->left = z;
     else
         y->right = z;
-    z->left =T->nil;
-    z->right=T->nil;
-    z->color=RED;
-    rbt_insert_fixup(T,z);
+    z->left = T->nil;
+    z->right = T->nil;
+    z->color = RED;
+    rbt_insert_fixup(T, z);
+}
+
+void rbt_transplant(RBT *T, rbt_node *u, rbt_node *v)
+{
+    if (u->p == T->nil)
+        T->root = v;
+    else if (u == u->p->left)
+        u->p->left = v;
+    else
+        u->p->right = v;
+    v->p = u->p;
+}
+
+rbt_node *tree_minimum(rbt_node *x)
+{
+    while (x->left != NULL)
+    {
+        x = x->left;
+    }
+    return x;
+}
+
+rbt_node *tree_maximum(rbt_node *x)
+{
+    while (x->right != NULL)
+    {
+        x = x->right;
+    }
+    return x;
+}
+
+void rbt_delete_fixup(RBT *T, rbt_node *x)
+{
+    
+}
+void rbt_delete(RBT *T, rbt_node *z)
+{
+    rbt_node *y = z;
+    rbt_node *x;
+    int y_original_color = y->color;
+    if (z->left == T->nil)
+    {
+        x = z->right;
+        rbt_transplant(T, z, z->right);
+    }
+    else if (z->right = T->nil)
+    {
+        x = z->left;
+        rbt_transplant(T, z, z->left);
+    }
+    else
+    {
+        y = tree_minimum(z->right);
+        y_original_color = y->color;
+        x = y->right;
+        if (y->p == z)
+            x->p = y;
+        else
+        {
+            rbt_transplant(T, y, y->right);
+            y->right = z->right;
+            y->right->p = y;
+        }
+        rbt_transplant(T, z, y);
+        y->left = z->left;
+        y->left->p = y;
+        y->color = z->color;
+    }
+    if (y_original_color == BLACK)
+        rbt_delete_fixup(T, x);
 }
