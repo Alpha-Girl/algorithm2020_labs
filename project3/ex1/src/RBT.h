@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
 
 #define BLACK 0
 #define RED 1
