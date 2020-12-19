@@ -13,13 +13,13 @@ typedef struct rbt_node
     rbt_node *left;
     rbt_node *right;
     int color;
-};
+} rbt_node;
 
 typedef struct RBT
 {
     rbt_node *root;
     rbt_node *nil;
-};
+} RBT;
 
 void left_rotate(RBT *T, rbt_node *x)
 {
