@@ -9,22 +9,22 @@
 typedef struct rbt_node
 {
     int key;
-    rbt_node *p;
-    rbt_node *left;
-    rbt_node *right;
+    struct rbt_node *p;
+    struct rbt_node *left;
+    struct rbt_node *right;
     int color;
 } rbt_node;
 
 typedef struct RBT
 {
-    rbt_node *root;
-    rbt_node *nil;
+    struct rbt_node *root;
+    struct rbt_node *nil;
 } RBT;
 
 typedef struct delete_list
 {
-    rbt_node *node;
-    delete_list *next;
+    struct rbt_node *node;
+    struct delete_list *next;
 } delete_list;
 
 void left_rotate(RBT *T, rbt_node *x)

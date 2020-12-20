@@ -3,6 +3,7 @@
 #include <windows.h>
 int in[100];
 FILE *f_in, *out1, *time1, *time2, *out2;
+void Case_n(int n);
 int main()
 {
     f_in = fopen("../input/input.txt", "w");
