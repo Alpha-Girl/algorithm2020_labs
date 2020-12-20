@@ -21,6 +21,12 @@ typedef struct RBT
     rbt_node *nil;
 } RBT;
 
+typedef struct delete_list
+{
+    rbt_node *node;
+    delete_list *next;
+} delete_list;
+
 void left_rotate(RBT *T, rbt_node *x)
 {
     rbt_node *y;
@@ -256,4 +262,13 @@ void rbt_delete(RBT *T, rbt_node *z)
     }
     if (y_original_color == BLACK)
         rbt_delete_fixup(T, x);
+}
+
+void inorder(FILE *f, RBT *T, rbt_node *node)
+{
+    if (node == T->nil)
+        return;
+    inorder(f, T, node->left);
+    fprintf(f, " %d ", node->key);
+    inorder(f, T, node->right);
 }
