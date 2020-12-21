@@ -29,9 +29,10 @@ typedef struct delete_list
 
 void left_rotate(RBT *T, rbt_node *x)
 {
+    printf("L:%d", x->key);
     rbt_node *y;
     y = x->right;
-    x->right = y->right;
+    x->right = y->left;
     if (y->left != T->nil)
         y->left->p = x;
     y->p = x->p;
@@ -47,9 +48,10 @@ void left_rotate(RBT *T, rbt_node *x)
 
 void right_rotate(RBT *T, rbt_node *x)
 {
+    printf("R:%d", x->key);
     rbt_node *y;
     y = x->left;
-    x->left = y->left;
+    x->left = y->right;
     if (y->right != T->nil)
         y->right->p = x;
     y->p = x->p;
@@ -69,7 +71,7 @@ void rbt_insert_fixup(RBT *T, rbt_node *z)
     {
         if (z->p == z->p->p->left)
         {
-            y = z->p->p->left;
+            y = z->p->p->right;
             if (y->color == RED)
             {
                 z->p->color = BLACK;
@@ -88,7 +90,7 @@ void rbt_insert_fixup(RBT *T, rbt_node *z)
         }
         else
         {
-            y = z->p->p->right;
+            y = z->p->p->left;
             if (y->color == RED)
             {
                 z->p->color = BLACK;
@@ -113,6 +115,7 @@ void rbt_insert(RBT *T, rbt_node *z)
     rbt_node *x, *y;
     y = T->nil;
     x = T->root;
+    printf("111");
     while (x != T->nil)
     {
         y = x;
@@ -121,6 +124,7 @@ void rbt_insert(RBT *T, rbt_node *z)
         else
             x = x->right;
     }
+    printf("222");
     z->p = y;
     if (y == T->nil)
         T->root = z;
@@ -131,7 +135,9 @@ void rbt_insert(RBT *T, rbt_node *z)
     z->left = T->nil;
     z->right = T->nil;
     z->color = RED;
+    printf("333");
     rbt_insert_fixup(T, z);
+    printf("444");
 }
 
 void rbt_transplant(RBT *T, rbt_node *u, rbt_node *v)

@@ -20,10 +20,11 @@ int main()
     time1 = fopen("../output/time1.txt", "w");
     time2 = fopen("../output/time2.txt", "w");
     out2 = fopen("../output/delete_data.txt", "w");
-    for (int i = 1; i <= 5; i++)
+    Case_n(20);
+    /*for (int i = 1; i <= 5; i++)
     {
         Case_n(i * 20);
-    }
+    }*/
 }
 
 rbt_node *make_node(int k)
@@ -44,8 +45,8 @@ void Case_n(int n)
     choose = choose % 4;
     delete_list *List = NULL;
     int i;
-    delete_list *new;
-
+    delete_list *new = NULL;
+    printf("choose=%d\n", choose);
     double run_time;
     LARGE_INTEGER time_start; //开始时间
     LARGE_INTEGER time_over;  //结束时间
@@ -57,21 +58,38 @@ void Case_n(int n)
     QueryPerformanceCounter(&time_over);  //计时结束
     run_time = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
     //乘以1000000把单位由秒化为微秒，精度为1000 000/（cpu主频）微秒
-
+    printf("tt");
     RBT *T = (RBT *)calloc(1, sizeof(RBT));
     T->nil = (rbt_node *)calloc(1, sizeof(rbt_node));
+    T->nil->color = BLACK;
+    T->nil->left = NULL;
+    T->nil->right = NULL;
     T->root = T->nil;
+    T->root->p = T->nil;
     QueryPerformanceCounter(&time_start);
+    printf("kk");
     for (i = 0; i < n; i++)
     {
-        rbt_node *x = make_node(in[i]);
+        printf("\n%d", i);
+
+        rbt_node *x;
+        x = (rbt_node *)calloc(1, sizeof(rbt_node));
+        x->color = BLACK;
+        x->key = in[i];
+        printf(" %d ", x->key);
+        x->p = NULL;
+        x->left = NULL;
+        x->right = NULL;
+        printf("p");
         rbt_insert(T, x);
+        printf("i");
         if (i % 4 == choose)
         {
             new = (delete_list *)calloc(1, sizeof(delete_list));
             new->next = List;
             new->node = x;
             List = new;
+            printf("ok");
         }
     }
     QueryPerformanceCounter(&time_over);
