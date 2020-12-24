@@ -37,7 +37,10 @@ void left_rotate(RBT *T, rbt_node *x)
         y->left->p = x;
     y->p = x->p;
     if (x->p == T->nil)
+    {
         T->root = y;
+        y->p = T->nil;
+    }
     else if (x == x->p->left)
         x->p->left = y;
     else
@@ -56,7 +59,10 @@ void right_rotate(RBT *T, rbt_node *x)
         y->right->p = x;
     y->p = x->p;
     if (x->p == T->nil)
+    {
         T->root = y;
+        y->p = T->nil;
+    }
     else if (x == x->p->right)
         x->p->right = y;
     else
@@ -82,10 +88,17 @@ void rbt_insert_fixup(RBT *T, rbt_node *z)
             else if (z == z->p->right)
             {
                 z = z->p;
+                printf("bb");
+                printf("%d %d %d", z->key, z->p->key, z->p->p->key);
                 left_rotate(T, z);
             }
+            if (z->p == T->nil || z->p->p == T->nil)
+                break;
             z->p->color = BLACK;
             z->p->p->color = RED;
+            printf("aa");
+
+            printf("%d %d %d", z->key, z->p->key, z->p->p->key);
             right_rotate(T, z->p->p);
         }
         else
@@ -101,10 +114,16 @@ void rbt_insert_fixup(RBT *T, rbt_node *z)
             else if (z == z->p->left)
             {
                 z = z->p;
+                printf("dd");
+                printf("%d %d %d", z->key, z->p->key, z->p->p->key);
                 right_rotate(T, z);
             }
+            if (z->p == T->nil || z->p->p == T->nil)
+                break;
             z->p->color = BLACK;
             z->p->p->color = RED;
+            printf("cc");
+            printf("%d %d %d", z->key, z->p->key, z->p->p->key);
             left_rotate(T, z->p->p);
         }
     }
@@ -125,9 +144,12 @@ void rbt_insert(RBT *T, rbt_node *z)
             x = x->right;
     }
     printf("222");
+
     z->p = y;
     if (y == T->nil)
+    {
         T->root = z;
+    }
     else if (z->key < y->key)
         y->left = z;
     else
@@ -135,6 +157,7 @@ void rbt_insert(RBT *T, rbt_node *z)
     z->left = T->nil;
     z->right = T->nil;
     z->color = RED;
+    printf(" %d ", z->p->key);
     printf("333");
     rbt_insert_fixup(T, z);
     printf("444");
@@ -143,7 +166,10 @@ void rbt_insert(RBT *T, rbt_node *z)
 void rbt_transplant(RBT *T, rbt_node *u, rbt_node *v)
 {
     if (u->p == T->nil)
+    {
         T->root = v;
+        v->p = T->nil;
+    }
     else if (u == u->p->left)
         u->p->left = v;
     else
@@ -151,18 +177,18 @@ void rbt_transplant(RBT *T, rbt_node *u, rbt_node *v)
     v->p = u->p;
 }
 
-rbt_node *tree_minimum(rbt_node *x)
+rbt_node *tree_minimum(RBT *T, rbt_node *x)
 {
-    while (x->left != NULL)
+    while (x->left != T->nil)
     {
         x = x->left;
     }
     return x;
 }
 
-rbt_node *tree_maximum(rbt_node *x)
+rbt_node *tree_maximum(RBT *T, rbt_node *x)
 {
-    while (x->right != NULL)
+    while (x->right != T->nil)
     {
         x = x->right;
     }
@@ -243,14 +269,14 @@ void rbt_delete(RBT *T, rbt_node *z)
         x = z->right;
         rbt_transplant(T, z, z->right);
     }
-    else if (z->right = T->nil)
+    else if (z->right == T->nil)
     {
         x = z->left;
         rbt_transplant(T, z, z->left);
     }
     else
     {
-        y = tree_minimum(z->right);
+        y = tree_minimum(T, z->right);
         y_original_color = y->color;
         x = y->right;
         if (y->p == z)

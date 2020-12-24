@@ -74,7 +74,7 @@ void Case_n(int n)
 
         rbt_node *x;
         x = (rbt_node *)calloc(1, sizeof(rbt_node));
-        x->color = BLACK;
+        x->color = RED;
         x->key = in[i];
         printf(" %d ", x->key);
         x->p = NULL;
@@ -91,28 +91,37 @@ void Case_n(int n)
             List = new;
             printf("ok");
         }
+        printf("T %d l %d r %d", T->root->key, T->root->left->key, T->root->right->key);
     }
+    printf("\n\nT");
+
     QueryPerformanceCounter(&time_over);
     run_time = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
     fprintf(time1, "%lf\n", run_time);
     inorder(out1, T, T->root);
     fprintf(out1, "\n");
+    fclose(out1);
     QueryPerformanceCounter(&time_start);
     for (i = 0; i < n / 4; i++)
     {
         fprintf(out2, " %d ", List->node->key);
+        printf("now delete %d", List->node->key);
         rbt_delete(T, List->node);
         free(List->node);
         List = List->next;
     }
+    printf("hhh");
     QueryPerformanceCounter(&time_over);
     run_time = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
     fprintf(time2, "%lf\n", run_time);
     fprintf(out2, "\n");
     inorder(out2, T, T->root);
     fprintf(out2, "\n");
-
-    while (T->root != T->nil)
+    fclose(time1);
+    fclose(time2);
+    fclose(out2);
+    printf("c");
+    /*while (T->root != T->nil)
     {
         rbt_node *x = T->root;
         rbt_delete(T, T->root);
@@ -120,5 +129,5 @@ void Case_n(int n)
     }
     free(T);
     free(List);
-    free(new);
+    free(new);*/
 }
