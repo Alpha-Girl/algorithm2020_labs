@@ -1,6 +1,7 @@
-#include "rr.h"
+#include "RBT.h"
 #include "malloc.h"
 #include <windows.h>
+#include <time.h>
 int in[100];
 FILE *f_in, *out1, *time1, *time2, *out2;
 void Case_n(int n);
@@ -15,22 +16,19 @@ int main()
         fprintf(f_in, "%d\n", in[i]);
     }
     fclose(f_in);
-    printf("Finished 1.\n");
     out1 = fopen("../output/inorder.txt", "w");
     time1 = fopen("../output/time1.txt", "w");
     time2 = fopen("../output/time2.txt", "w");
     out2 = fopen("../output/delete_data.txt", "w");
-
+    //n=20，40，60，80，100
     for (int i = 1; i <= 5; i++)
-    {
         Case_n(i * 20);
-    }
     fclose(out1);
     fclose(out2);
     fclose(time1);
     fclose(time2);
+    system("PAUSE");
 }
-
 
 void Case_n(int n)
 {
@@ -39,7 +37,6 @@ void Case_n(int n)
     delete_list *List = NULL;
     int i;
     delete_list *new = NULL;
-    printf("choose=%d\n", choose);
     double run_time;
     LARGE_INTEGER time_start; //开始时间
     LARGE_INTEGER time_over;  //结束时间
@@ -51,14 +48,14 @@ void Case_n(int n)
     QueryPerformanceCounter(&time_over);  //计时结束
     run_time = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
     //乘以1000000把单位由秒化为微秒，精度为1000 000/（cpu主频）微秒
-    printf("tt");
-    RBT *T = create_rbtree();
+    //建树
+    RBT *T = create_rbt();
     QueryPerformanceCounter(&time_start);
-    printf("kk");
     for (i = 0; i < n; i++)
     {
-        rbt_node *x = insert_rbtree(T, in[i]);
-
+        //生成节点
+        rbt_node *x = insert_rbt(T, in[i]);
+        //记录待删除节点
         if (i % 4 == choose)
         {
             new = (delete_list *)calloc(1, sizeof(delete_list));
@@ -67,121 +64,25 @@ void Case_n(int n)
             List = new;
         }
     }
-    printf("\n\nT");
-
     QueryPerformanceCounter(&time_over);
     run_time = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
     fprintf(time1, "%lf\n", run_time);
+    //中序遍历
     inorder(out1, T, T->node);
     fprintf(out1, "\n");
-
     QueryPerformanceCounter(&time_start);
+    //删除节点
     for (i = 0; i < n / 4; i++)
     {
         fprintf(out2, " %d ", List->node->key);
-        printf("now delete %d:%d ", i, List->node->key);
-        rbtree_delete(T, List->node);
+        rbt_delete(T, List->node);
         free(List->node);
         List = List->next;
     }
-    printf("hhh");
     QueryPerformanceCounter(&time_over);
     run_time = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
     fprintf(time2, "%lf\n", run_time);
     fprintf(out2, "\n");
     inorder(out2, T, T->node);
     fprintf(out2, "\n");
-
-    printf("c");
 }
-/*
-void Case_n(int n)
-{
-    int choose = rand();
-    choose = choose % 4;
-    delete_list *List = NULL;
-    int i;
-    delete_list *new = NULL;
-    printf("choose=%d\n", choose);
-    double run_time;
-    LARGE_INTEGER time_start; //开始时间
-    LARGE_INTEGER time_over;  //结束时间
-    double dqFreq;            //计时器频率
-    LARGE_INTEGER f;          //计时器频率
-    QueryPerformanceFrequency(&f);
-    dqFreq = (double)f.QuadPart;
-    QueryPerformanceCounter(&time_start); //计时开始
-    QueryPerformanceCounter(&time_over);  //计时结束
-    run_time = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
-    //乘以1000000把单位由秒化为微秒，精度为1000 000/（cpu主频）微秒
-    printf("tt");
-    RBT *T = (RBT *)calloc(1, sizeof(RBT));
-    T->nil = (rbt_node *)calloc(1, sizeof(rbt_node));
-    T->nil->color = BLACK;
-    T->nil->left = NULL;
-    T->nil->right = NULL;
-    T->root = T->nil;
-    T->root->p = T->nil;
-    QueryPerformanceCounter(&time_start);
-    printf("kk");
-    for (i = 0; i < n; i++)
-    {
-        printf("\n%d", i);
-
-        rbt_node *x;
-        x = (rbt_node *)calloc(1, sizeof(rbt_node));
-        x->color = RED;
-        x->key = in[i];
-        printf(" %d ", x->key);
-        x->p = NULL;
-        x->left = NULL;
-        x->right = NULL;
-        printf("p");
-        rbt_insert(T, x);
-        printf("i");
-        if (i % 4 == choose)
-        {
-            new = (delete_list *)calloc(1, sizeof(delete_list));
-            new->next = List;
-            new->node = x;
-            List = new;
-            printf("ok");
-        }
-        printf("T %d l %d r %d", T->root->key, T->root->left->key, T->root->right->key);
-    }
-    printf("\n\nT");
-
-    QueryPerformanceCounter(&time_over);
-    run_time = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
-    fprintf(time1, "%lf\n", run_time);
-    inorder(out1, T, T->root);
-    fprintf(out1, "\n");
-
-    QueryPerformanceCounter(&time_start);
-    for (i = 0; i < n / 4; i++)
-    {
-        fprintf(out2, " %d ", List->node->key);
-        printf("now delete %d", List->node->key);
-        rbt_delete(T, List->node);
-        free(List->node);
-        List = List->next;
-    }
-    printf("hhh");
-    QueryPerformanceCounter(&time_over);
-    run_time = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
-    fprintf(time2, "%lf\n", run_time);
-    fprintf(out2, "\n");
-    inorder(out2, T, T->root);
-    fprintf(out2, "\n");
-
-    printf("c");
-    /*while (T->root != T->nil)
-    {
-        rbt_node *x = T->root;
-        rbt_delete(T, T->root);
-        free(x);
-    }
-    free(T);
-    free(List);
-    free(new);
-}*/

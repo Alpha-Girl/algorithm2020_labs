@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 #define RED 0
 #define BLACK 1
 
@@ -23,11 +26,12 @@ typedef struct delete_list
     struct delete_list *next;
 } delete_list;
 
-#include <stdio.h>
-#include <stdlib.h>
-
-
-
+/***********
+函数名：create_rbt
+函数功能描述：创建红黑树
+输入参数的类型和意义：无
+输出参数的类型和意义：RBT* 红黑树指针
+************/
 RBT *create_rbt()
 {
     RBT *root = (RBT *)malloc(sizeof(RBT));
@@ -35,6 +39,12 @@ RBT *create_rbt()
     return root;
 }
 
+/***********
+函数名：inorder
+函数功能描述：中序遍历红黑树
+输入参数的类型和意义：FILE* 输出的文件指针，RBT* 红黑树指针, rbt_node* 当前输出的节点
+输出参数的类型和意义：无
+************/
 void inorder(FILE *f, RBT *T, rbt_node *node)
 {
     if (node == NULL)
@@ -44,6 +54,12 @@ void inorder(FILE *f, RBT *T, rbt_node *node)
     inorder(f, T, node->right);
 }
 
+/***********
+函数名：minimum
+函数功能描述：红黑树子树的最小值
+输入参数的类型和意义：rbt_node* 子树的根
+输出参数的类型和意义：rbt_node* 最小值节点对应的指针
+************/
 rbt_node *minimum(rbt_node *tree)
 {
     if (tree == NULL)
@@ -53,6 +69,12 @@ rbt_node *minimum(rbt_node *tree)
     return tree;
 }
 
+/***********
+函数名：maximum
+函数功能描述：红黑树子树的最大值
+输入参数的类型和意义：rbt_node* 子树的根
+输出参数的类型和意义：rbt_node* 最大值节点对应的指针
+************/
 rbt_node *maximum(rbt_node *tree)
 {
     if (tree == NULL)
@@ -62,6 +84,12 @@ rbt_node *maximum(rbt_node *tree)
     return tree;
 }
 
+/***********
+函数名：rbt_left_rotate
+函数功能描述：红黑树左旋
+输入参数的类型和意义：RBT* 红黑树指针，rbt_node* 待左旋的节点
+输出参数的类型和意义：无
+************/
 void rbt_left_rotate(RBT *root, rbt_node *x)
 {
     rbt_node *y = x->right;
@@ -87,6 +115,12 @@ void rbt_left_rotate(RBT *root, rbt_node *x)
         x->max = x->right->max;
 }
 
+/***********
+函数名：rbt_right_rotate
+函数功能描述：红黑树右旋
+输入参数的类型和意义：RBT* 红黑树指针，rbt_node* 待右旋的节点
+输出参数的类型和意义：无
+************/
 void rbt_right_rotate(RBT *root, rbt_node *y)
 {
     rbt_node *x = y->left;
@@ -112,7 +146,13 @@ void rbt_right_rotate(RBT *root, rbt_node *y)
         x->max = x->right->max;
 }
 
-static void rbt_insert_fixup(RBT *root, rbt_node *node)
+/***********
+函数名：rbt_insert_fixup
+函数功能描述：红黑树插入调整
+输入参数的类型和意义：RBT* 红黑树指针，rbt_node* 待调整的节点
+输出参数的类型和意义：无
+************/
+void rbt_insert_fixup(RBT *root, rbt_node *node)
 {
     rbt_node *parent, *gparent;
     while ((parent = node->parent) && parent->color == RED)
@@ -172,6 +212,12 @@ static void rbt_insert_fixup(RBT *root, rbt_node *node)
     root->node->color = BLACK;
 }
 
+/***********
+函数名：rbt_insert
+函数功能描述：红黑树插入
+输入参数的类型和意义：RBT* 红黑树指针，rbt_node* 待插入的节点
+输出参数的类型和意义：无
+************/
 void rbt_insert(RBT *root, rbt_node *node)
 {
     rbt_node *y = NULL;
@@ -208,6 +254,12 @@ void rbt_insert(RBT *root, rbt_node *node)
     rbt_insert_fixup(root, node);
 }
 
+/***********
+函数名：create_rbt_node
+函数功能描述：区间树节点创建
+输入参数的类型和意义：int key 关键字, int h 右端点, rbt_node *parent 父节点, rbt_node *left 左孩子, rbt_node *right右孩子
+输出参数的类型和意义：rbt_node* 区间树节点指针
+************/
 rbt_node *create_rbt_node(int key, int h, rbt_node *parent, rbt_node *left, rbt_node *right)
 {
     rbt_node *p;
@@ -223,6 +275,12 @@ rbt_node *create_rbt_node(int key, int h, rbt_node *parent, rbt_node *left, rbt_
     return p;
 }
 
+/***********
+函数名：insert_rbt
+函数功能描述：区间树节点插入
+输入参数的类型和意义：RBT *root 区间树根, int key 关键字, int h 右端点
+输出参数的类型和意义：rbt_node* 区间树节点指针
+************/
 rbt_node *insert_rbt(RBT *root, int key, int h)
 {
     rbt_node *node;
@@ -232,6 +290,12 @@ rbt_node *insert_rbt(RBT *root, int key, int h)
     return node;
 }
 
+/***********
+函数名：rbt_delete_fixup
+函数功能描述：区间树节点删除调整
+输入参数的类型和意义：RBT *root 区间树根, rbt_node *node 待删除节点, rbt_node *parent 待删除节点的父亲
+输出参数的类型和意义：无
+************/
 void rbt_delete_fixup(RBT *root, rbt_node *node, rbt_node *parent)
 {
     rbt_node *other;
@@ -312,6 +376,12 @@ void rbt_delete_fixup(RBT *root, rbt_node *node, rbt_node *parent)
         node->color = BLACK;
 }
 
+/***********
+函数名：rbt_delete
+函数功能描述：区间树节点
+输入参数的类型和意义：RBT *root 区间树根, rbt_node *node 待删除节点
+输出参数的类型和意义：无
+************/
 void rbt_delete(RBT *root, rbt_node *node)
 {
     rbt_node *child, *parent;
@@ -378,12 +448,12 @@ void rbt_delete(RBT *root, rbt_node *node)
     free(node);
 }
 
-void delete_rbt(RBT *root, int key)
-{
-    rbt_node *z, *node;
-    rbt_delete(root, z);
-}
-
+/***********
+函数名：rbt_destroy
+函数功能描述：区间树节点销毁
+输入参数的类型和意义：rbt_node *tree 待销毁节点
+输出参数的类型和意义：无
+************/
 void rbt_destroy(rbt_node *tree)
 {
     if (tree == NULL)
@@ -395,6 +465,12 @@ void rbt_destroy(rbt_node *tree)
     free(tree);
 }
 
+/***********
+函数名：rbt_destroy
+函数功能描述：区间树销毁
+输入参数的类型和意义：RBT *root 待销毁树指针
+输出参数的类型和意义：无
+************/
 void destroy_rbt(RBT *root)
 {
     if (root != NULL)
@@ -402,10 +478,16 @@ void destroy_rbt(RBT *root)
     free(root);
 }
 
+/***********
+函数名：interval_search
+函数功能描述：区间树查找
+输入参数的类型和意义：RBT *T 查找的树，rbt_node *i 所取区间
+输出参数的类型和意义：rbt_node* 找到的节点指针 若未找到返回NULL
+************/
 rbt_node *interval_search(RBT *T, rbt_node *i)
 {
     rbt_node *x = T->node;
-    while (x != NULL && (i->key > x->key || i->high < x->high))
+    while (x != NULL && !(i->key <= x->high && i->high >= x->key))
     {
         if (x->left != NULL && x->left->max >= i->key)
             x = x->left;
