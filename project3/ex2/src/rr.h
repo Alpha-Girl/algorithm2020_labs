@@ -26,35 +26,9 @@ typedef struct delete_list
 #include <stdio.h>
 #include <stdlib.h>
 
-#define rb_parent(r) ((r)->parent)
-#define rb_color(r) ((r)->color)
-#define rb_is_red(r) ((r)->color == RED)
-#define rb_is_black(r) ((r)->color == BLACK)
-#define rb_set_black(r)     \
-    do                      \
-    {                       \
-        (r)->color = BLACK; \
-    } while (0)
-#define rb_set_red(r)     \
-    do                    \
-    {                     \
-        (r)->color = RED; \
-    } while (0)
-#define rb_set_parent(r, p) \
-    do                      \
-    {                       \
-        (r)->parent = (p);  \
-    } while (0)
-#define rb_set_color(r, c) \
-    do                     \
-    {                      \
-        (r)->color = (c);  \
-    } while (0)
 
-/*
- * 创建红黑树，返回"红黑树的根"！
- */
-RBT *create_rbtree()
+
+RBT *create_rbt()
 {
     RBT *root = (RBT *)malloc(sizeof(RBT));
     root->node = NULL;
@@ -88,7 +62,7 @@ rbt_node *maximum(rbt_node *tree)
     return tree;
 }
 
-void rbtree_left_rotate(RBT *root, rbt_node *x)
+void rbt_left_rotate(RBT *root, rbt_node *x)
 {
     rbt_node *y = x->right;
     x->right = y->left;
@@ -113,7 +87,7 @@ void rbtree_left_rotate(RBT *root, rbt_node *x)
         x->max = x->right->max;
 }
 
-void rbtree_right_rotate(RBT *root, rbt_node *y)
+void rbt_right_rotate(RBT *root, rbt_node *y)
 {
     rbt_node *x = y->left;
     y->left = x->right;
@@ -138,21 +112,21 @@ void rbtree_right_rotate(RBT *root, rbt_node *y)
         x->max = x->right->max;
 }
 
-static void rbtree_insert_fixup(RBT *root, rbt_node *node)
+static void rbt_insert_fixup(RBT *root, rbt_node *node)
 {
     rbt_node *parent, *gparent;
-    while ((parent = rb_parent(node)) && rb_is_red(parent))
+    while ((parent = node->parent) && parent->color == RED)
     {
-        gparent = rb_parent(parent);
+        gparent = parent->parent;
         if (parent == gparent->left)
         {
             {
                 rbt_node *uncle = gparent->right;
-                if (uncle && rb_is_red(uncle))
+                if (uncle && uncle->color == RED)
                 {
-                    rb_set_black(uncle);
-                    rb_set_black(parent);
-                    rb_set_red(gparent);
+                    uncle->color = BLACK;
+                    parent->color = BLACK;
+                    gparent->color = RED;
                     node = gparent;
                     continue;
                 }
@@ -160,24 +134,24 @@ static void rbtree_insert_fixup(RBT *root, rbt_node *node)
             if (parent->right == node)
             {
                 rbt_node *tmp;
-                rbtree_left_rotate(root, parent);
+                rbt_left_rotate(root, parent);
                 tmp = parent;
                 parent = node;
                 node = tmp;
             }
-            rb_set_black(parent);
-            rb_set_red(gparent);
-            rbtree_right_rotate(root, gparent);
+            parent->color = BLACK;
+            gparent->color = RED;
+            rbt_right_rotate(root, gparent);
         }
         else
         {
             {
                 rbt_node *uncle = gparent->left;
-                if (uncle && rb_is_red(uncle))
+                if (uncle && uncle->color == RED)
                 {
-                    rb_set_black(uncle);
-                    rb_set_black(parent);
-                    rb_set_red(gparent);
+                    uncle->color = BLACK;
+                    parent->color = BLACK;
+                    gparent->color = RED;
                     node = gparent;
                     continue;
                 }
@@ -185,20 +159,20 @@ static void rbtree_insert_fixup(RBT *root, rbt_node *node)
             if (parent->left == node)
             {
                 rbt_node *tmp;
-                rbtree_right_rotate(root, parent);
+                rbt_right_rotate(root, parent);
                 tmp = parent;
                 parent = node;
                 node = tmp;
             }
-            rb_set_black(parent);
-            rb_set_red(gparent);
-            rbtree_left_rotate(root, gparent);
+            parent->color = BLACK;
+            gparent->color = RED;
+            rbt_left_rotate(root, gparent);
         }
     }
-    rb_set_black(root->node);
+    root->node->color = BLACK;
 }
 
-void rbtree_insert(RBT *root, rbt_node *node)
+void rbt_insert(RBT *root, rbt_node *node)
 {
     rbt_node *y = NULL;
     rbt_node *x = root->node;
@@ -210,7 +184,7 @@ void rbtree_insert(RBT *root, rbt_node *node)
         else
             x = x->right;
     }
-    rb_parent(node) = y;
+    node->parent = y;
     if (y != NULL)
     {
         if (node->key < y->key)
@@ -231,10 +205,10 @@ void rbtree_insert(RBT *root, rbt_node *node)
         y = y->parent;
     }
 
-    rbtree_insert_fixup(root, node);
+    rbt_insert_fixup(root, node);
 }
 
-rbt_node *create_rbtree_node(int key, int h, rbt_node *parent, rbt_node *left, rbt_node *right)
+rbt_node *create_rbt_node(int key, int h, rbt_node *parent, rbt_node *left, rbt_node *right)
 {
     rbt_node *p;
     if ((p = (rbt_node *)malloc(sizeof(rbt_node))) == NULL)
@@ -249,50 +223,52 @@ rbt_node *create_rbtree_node(int key, int h, rbt_node *parent, rbt_node *left, r
     return p;
 }
 
-rbt_node *insert_rbtree(RBT *root, int key, int h)
+rbt_node *insert_rbt(RBT *root, int key, int h)
 {
     rbt_node *node;
-    if ((node = create_rbtree_node(key, h, NULL, NULL, NULL)) == NULL)
+    if ((node = create_rbt_node(key, h, NULL, NULL, NULL)) == NULL)
         return NULL;
-    rbtree_insert(root, node);
+    rbt_insert(root, node);
     return node;
 }
 
-void rbtree_delete_fixup(RBT *root, rbt_node *node, rbt_node *parent)
+void rbt_delete_fixup(RBT *root, rbt_node *node, rbt_node *parent)
 {
     rbt_node *other;
-    while ((!node || rb_is_black(node)) && node != root->node)
+    while ((!node || node->color == BLACK) && node != root->node)
     {
         if (parent->left == node)
         {
             other = parent->right;
-            if (rb_is_red(other))
+            if (other->color == RED)
             {
-                rb_set_black(other);
-                rb_set_red(parent);
-                rbtree_left_rotate(root, parent);
+                other->color = BLACK;
+                parent->color = RED;
+                rbt_left_rotate(root, parent);
                 other = parent->right;
             }
-            if ((!other->left || rb_is_black(other->left)) &&
-                (!other->right || rb_is_black(other->right)))
+            if ((!other->left || other->left->color == BLACK) &&
+                (!other->right || other->right->color == BLACK))
             {
-                rb_set_red(other);
+                other->color = RED;
                 node = parent;
-                parent = rb_parent(node);
+                parent = node->parent;
             }
             else
             {
-                if (!other->right || rb_is_black(other->right))
+                if (!other->right || other->right->color == BLACK)
                 {
-                    rb_set_black(other->left);
-                    rb_set_red(other);
-                    rbtree_right_rotate(root, other);
+                    other->left->color = BLACK;
+                    ;
+                    other->color = RED;
+                    ;
+                    rbt_right_rotate(root, other);
                     other = parent->right;
                 }
-                rb_set_color(other, rb_color(parent));
-                rb_set_black(parent);
-                rb_set_black(other->right);
-                rbtree_left_rotate(root, parent);
+                other->color = parent->color;
+                parent->color = BLACK;
+                other->right->color = BLACK;
+                rbt_left_rotate(root, parent);
                 node = root->node;
                 break;
             }
@@ -300,43 +276,43 @@ void rbtree_delete_fixup(RBT *root, rbt_node *node, rbt_node *parent)
         else
         {
             other = parent->left;
-            if (rb_is_red(other))
+            if (other->color == RED)
             {
-                rb_set_black(other);
-                rb_set_red(parent);
-                rbtree_right_rotate(root, parent);
+                other->color = BLACK;
+                parent->color = RED;
+                rbt_right_rotate(root, parent);
                 other = parent->left;
             }
-            if ((!other->left || rb_is_black(other->left)) &&
-                (!other->right || rb_is_black(other->right)))
+            if ((!other->left || other->left->color == BLACK) &&
+                (!other->right || other->right->color == BLACK))
             {
-                rb_set_red(other);
+                other->color = RED;
                 node = parent;
-                parent = rb_parent(node);
+                parent = node->parent;
             }
             else
             {
-                if (!other->left || rb_is_black(other->left))
+                if (!other->left || other->left->color == BLACK)
                 {
-                    rb_set_black(other->right);
-                    rb_set_red(other);
-                    rbtree_left_rotate(root, other);
+                    other->right->color = BLACK;
+                    other->color = RED;
+                    rbt_left_rotate(root, other);
                     other = parent->left;
                 }
-                rb_set_color(other, rb_color(parent));
-                rb_set_black(parent);
-                rb_set_black(other->left);
-                rbtree_right_rotate(root, parent);
+                other->color = parent->color;
+                parent->color = BLACK;
+                other->left->color = BLACK;
+                rbt_right_rotate(root, parent);
                 node = root->node;
                 break;
             }
         }
     }
     if (node)
-        rb_set_black(node);
+        node->color = BLACK;
 }
 
-void rbtree_delete(RBT *root, rbt_node *node)
+void rbt_delete(RBT *root, rbt_node *node)
 {
     rbt_node *child, *parent;
     int color;
@@ -346,18 +322,18 @@ void rbtree_delete(RBT *root, rbt_node *node)
         replace = replace->right;
         while (replace->left != NULL)
             replace = replace->left;
-        if (rb_parent(node))
+        if (node->parent)
         {
-            if (rb_parent(node)->left == node)
-                rb_parent(node)->left = replace;
+            if (node->parent->left == node)
+                node->parent->left = replace;
             else
-                rb_parent(node)->right = replace;
+                node->parent->right = replace;
         }
         else
             root->node = replace;
         child = replace->right;
-        parent = rb_parent(replace);
-        color = rb_color(replace);
+        parent = replace->parent;
+        color = replace->color;
         if (parent == node)
         {
             parent = replace;
@@ -365,18 +341,17 @@ void rbtree_delete(RBT *root, rbt_node *node)
         else
         {
             if (child)
-                rb_set_parent(child, parent);
+                child->parent = parent;
             parent->left = child;
-
             replace->right = node->right;
-            rb_set_parent(node->right, replace);
+            node->right->parent = replace;
         }
         replace->parent = node->parent;
         replace->color = node->color;
         replace->left = node->left;
         node->left->parent = replace;
         if (color == BLACK)
-            rbtree_delete_fixup(root, child, parent);
+            rbt_delete_fixup(root, child, parent);
         free(node);
         return;
     }
@@ -399,31 +374,31 @@ void rbtree_delete(RBT *root, rbt_node *node)
         root->node = child;
 
     if (color == BLACK)
-        rbtree_delete_fixup(root, child, parent);
+        rbt_delete_fixup(root, child, parent);
     free(node);
 }
 
-void delete_rbtree(RBT *root, int key)
+void delete_rbt(RBT *root, int key)
 {
     rbt_node *z, *node;
-    rbtree_delete(root, z);
+    rbt_delete(root, z);
 }
 
-void rbtree_destroy(rbt_node *tree)
+void rbt_destroy(rbt_node *tree)
 {
     if (tree == NULL)
         return;
     if (tree->left != NULL)
-        rbtree_destroy(tree->left);
+        rbt_destroy(tree->left);
     if (tree->right != NULL)
-        rbtree_destroy(tree->right);
+        rbt_destroy(tree->right);
     free(tree);
 }
 
-void destroy_rbtree(RBT *root)
+void destroy_rbt(RBT *root)
 {
     if (root != NULL)
-        rbtree_destroy(root->node);
+        rbt_destroy(root->node);
     free(root);
 }
 
