@@ -72,9 +72,21 @@ void SO(char *x, int m, char *y, int n)
     }
 }
 
+int Bc[ASIZE + 1];
+void Qs_Bc(char *P, int len)
+{
+    int i;
+    for (i = 1; i <= ASIZE; i++)
+        Bc[i] = len + 1;
+    for (i = 1; i <= ASIZE; i++)
+        Bc[t(P[i]) + 1] = len + 1 - i;
+}
 int main()
 {
     char P[11] = "DAGCDGDAGC\0";
     char T[30] = "ACGCTDAGAAGDCAGADGTDAGCDGDAGC\0";
     SO(P, strlen(P), T, strlen(T));
+    Qs_Bc(P, strlen(P));
+    for (int i = 1; i <= ASIZE; i++)
+        printf("\n %d %d", Bc[i], i);
 }
