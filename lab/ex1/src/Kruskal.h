@@ -37,17 +37,17 @@ typedef struct
 	int kind;				  //图的类型
 } MGraph;
 
-typedef struct
+typedef struct ArcNode
 {
 	int adjvex;				 //顶点
-	struct ArcNode *nextarc; //下一条边
+	 ArcNode *nextarc; //下一条边
 	int weight;				 //权重
 	char *info;
 } ArcNode;
 
 typedef struct VNode
 {
-	int data;
+	int dataaa;
 	ArcNode *firstarc;
 } VNode, AdjList[MAX_VERTEX_NUM];
 
@@ -63,15 +63,15 @@ int rand(int n) { return n ? rand() % n : 0; }
 
 #define INF 0x3f3f3f3f
 
-typedef pair<int, int> data;
-typedef pair<int, data> edge;
+typedef pair<int, int> dat;
+typedef pair<int, dat> edge;
 struct Graph
 {
 	vector<edge> edges;
 	int V_n = 0, A_n = 0;
 };
 
-bool cmp(pair<int, data> e1, pair<int, data> e2)
+bool cmp(pair<int, dat> e1, pair<int, dat> e2)
 {
 	return e1.first < e2.first;
 }
@@ -105,17 +105,17 @@ void InitGraph(Graph &G, int V_n, ostream &os)
 //调试用
 void ShowGraph(Graph G)
 {
-	for (auto it = G.edges.begin(); it != G.edges.end(); ++it)
+	for (vector<edge>::iterator it = G.edges.begin(); it != G.edges.end(); ++it)
 		cout << it->first << ' ' << it->second.first << ' ' << it->second.second << endl;
 }
 
-vector<data> Kruskal(Graph G, int &weight)
+vector<dat> Kruskal(Graph G, int &weight)
 {
 	int *uni = new int[G.V_n];
-	vector<data> ans;
+	vector<dat> ans;
 	for (int i = 0; i < G.V_n; ++i)
 		uni[i] = i;
-	for (auto it = G.edges.begin(); it != G.edges.end(); ++it)
+	for (vector<edge>::iterator it = G.edges.begin(); it != G.edges.end(); ++it)
 	{
 		if (uni[it->second.first] != uni[it->second.second])
 		{
