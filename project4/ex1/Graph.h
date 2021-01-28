@@ -51,3 +51,7 @@ typedef struct
     GraphKind kind;
 } ALGraph;
 
+int make()
+{
+    int M[512][512];
+}

@@ -1,17 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include<iostream>
+using namespace std;
 
-int main()
-{
-    int *a;
-    int n, i;
-    int size;
-    printf("Plz input the n:\n");
-    scanf("%d", &n);
-    a=(int *)calloc(n.sizeof(int));
-    for (i = 0; i < n; i++)
-    {
-        printf("Plz input the weight of %dth:\n",i+1);
-        scanf("%d",&a[i]);
-    }
+void f(){
+}
+
+int main(){
+    cout<<f()<<"aa";
 }

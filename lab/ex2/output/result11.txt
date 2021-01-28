@@ -1,0 +1,1225 @@
+
+There is no way from 1 to 2.
+The weight of the shortest way from 1 to 3 is 102
+(1,15,14,19,25,5,6,3)
+The weight of the shortest way from 1 to 4 is 97
+(1,15,14,19,25,5,21,8,4)
+The weight of the shortest way from 1 to 5 is 39
+(1,15,14,19,25,5)
+The weight of the shortest way from 1 to 6 is 59
+(1,15,14,19,25,5,6)
+There is no way from 1 to 7.
+The weight of the shortest way from 1 to 8 is 63
+(1,15,14,19,25,5,21,8)
+There is no way from 1 to 9.
+There is no way from 1 to 10.
+There is no way from 1 to 11.
+There is no way from 1 to 12.
+The weight of the shortest way from 1 to 13 is 38
+(1,16,13)
+The weight of the shortest way from 1 to 14 is 15
+(1,15,14)
+The weight of the shortest way from 1 to 15 is 7
+(1,15)
+The weight of the shortest way from 1 to 16 is 29
+(1,16)
+The weight of the shortest way from 1 to 17 is 17
+(1,15,14,17)
+The weight of the shortest way from 1 to 18 is 100
+(1,16,13,26,18)
+The weight of the shortest way from 1 to 19 is 20
+(1,15,14,19)
+The weight of the shortest way from 1 to 20 is 142
+(1,16,13,26,18,20)
+The weight of the shortest way from 1 to 21 is 52
+(1,15,14,19,25,5,21)
+The weight of the shortest way from 1 to 22 is 70
+(1,15,14,19,25,5,21,8,22)
+The weight of the shortest way from 1 to 23 is 54
+(1,15,14,19,25,23)
+There is no way from 1 to 24.
+The weight of the shortest way from 1 to 25 is 29
+(1,15,14,19,25)
+The weight of the shortest way from 1 to 26 is 85
+(1,16,13,26)
+The weight of the shortest way from 1 to 27 is 134
+(1,15,14,19,25,5,6,3,27)
+The weight of the shortest way from 2 to 1 is 35
+(2,1)
+The weight of the shortest way from 2 to 3 is 137
+(2,1,15,14,19,25,5,6,3)
+The weight of the shortest way from 2 to 4 is 51
+(2,8,4)
+The weight of the shortest way from 2 to 5 is 74
+(2,1,15,14,19,25,5)
+The weight of the shortest way from 2 to 6 is 94
+(2,1,15,14,19,25,5,6)
+There is no way from 2 to 7.
+The weight of the shortest way from 2 to 8 is 17
+(2,8)
+There is no way from 2 to 9.
+There is no way from 2 to 10.
+There is no way from 2 to 11.
+There is no way from 2 to 12.
+The weight of the shortest way from 2 to 13 is 73
+(2,1,16,13)
+The weight of the shortest way from 2 to 14 is 50
+(2,1,15,14)
+The weight of the shortest way from 2 to 15 is 42
+(2,1,15)
+The weight of the shortest way from 2 to 16 is 64
+(2,1,16)
+The weight of the shortest way from 2 to 17 is 52
+(2,1,15,14,17)
+The weight of the shortest way from 2 to 18 is 135
+(2,1,16,13,26,18)
+The weight of the shortest way from 2 to 19 is 55
+(2,1,15,14,19)
+The weight of the shortest way from 2 to 20 is 177
+(2,1,16,13,26,18,20)
+The weight of the shortest way from 2 to 21 is 87
+(2,1,15,14,19,25,5,21)
+The weight of the shortest way from 2 to 22 is 24
+(2,8,22)
+The weight of the shortest way from 2 to 23 is 89
+(2,1,15,14,19,25,23)
+There is no way from 2 to 24.
+The weight of the shortest way from 2 to 25 is 64
+(2,1,15,14,19,25)
+The weight of the shortest way from 2 to 26 is 120
+(2,1,16,13,26)
+The weight of the shortest way from 2 to 27 is 169
+(2,1,15,14,19,25,5,6,3,27)
+The weight of the shortest way from 3 to 1 is 147
+(3,27,25,5,21,16,14,17,1)
+There is no way from 3 to 2.
+The weight of the shortest way from 3 to 4 is 127
+(3,27,25,5,21,8,4)
+The weight of the shortest way from 3 to 5 is 69
+(3,27,25,5)
+The weight of the shortest way from 3 to 6 is 41
+(3,26,6)
+There is no way from 3 to 7.
+The weight of the shortest way from 3 to 8 is 93
+(3,27,25,5,21,8)
+There is no way from 3 to 9.
+There is no way from 3 to 10.
+There is no way from 3 to 11.
+There is no way from 3 to 12.
+The weight of the shortest way from 3 to 13 is 41
+(3,27,13)
+The weight of the shortest way from 3 to 14 is 115
+(3,27,25,5,21,16,14)
+The weight of the shortest way from 3 to 15 is 154
+(3,27,25,5,21,16,14,17,1,15)
+The weight of the shortest way from 3 to 16 is 86
+(3,27,25,5,21,16)
+The weight of the shortest way from 3 to 17 is 117
+(3,27,25,5,21,16,14,17)
+The weight of the shortest way from 3 to 18 is 30
+(3,26,18)
+The weight of the shortest way from 3 to 19 is 120
+(3,27,25,5,21,16,14,19)
+The weight of the shortest way from 3 to 20 is 72
+(3,26,18,20)
+The weight of the shortest way from 3 to 21 is 82
+(3,27,25,5,21)
+The weight of the shortest way from 3 to 22 is 100
+(3,27,25,5,21,8,22)
+The weight of the shortest way from 3 to 23 is 84
+(3,27,25,23)
+There is no way from 3 to 24.
+The weight of the shortest way from 3 to 25 is 59
+(3,27,25)
+The weight of the shortest way from 3 to 26 is 15
+(3,26)
+The weight of the shortest way from 3 to 27 is 32
+(3,27)
+The weight of the shortest way from 4 to 1 is 94
+(4,16,14,17,1)
+There is no way from 4 to 2.
+The weight of the shortest way from 4 to 3 is 130
+(4,16,13,6,3)
+The weight of the shortest way from 4 to 5 is 86
+(4,16,14,19,25,5)
+The weight of the shortest way from 4 to 6 is 87
+(4,16,13,6)
+There is no way from 4 to 7.
+The weight of the shortest way from 4 to 8 is 110
+(4,16,14,19,25,5,21,8)
+There is no way from 4 to 9.
+There is no way from 4 to 10.
+There is no way from 4 to 11.
+There is no way from 4 to 12.
+The weight of the shortest way from 4 to 13 is 42
+(4,16,13)
+The weight of the shortest way from 4 to 14 is 62
+(4,16,14)
+The weight of the shortest way from 4 to 15 is 101
+(4,16,14,17,1,15)
+The weight of the shortest way from 4 to 16 is 33
+(4,16)
+The weight of the shortest way from 4 to 17 is 64
+(4,16,14,17)
+The weight of the shortest way from 4 to 18 is 104
+(4,16,13,26,18)
+The weight of the shortest way from 4 to 19 is 67
+(4,16,14,19)
+The weight of the shortest way from 4 to 20 is 146
+(4,16,13,26,18,20)
+The weight of the shortest way from 4 to 21 is 99
+(4,16,14,19,25,5,21)
+The weight of the shortest way from 4 to 22 is 117
+(4,16,14,19,25,5,21,8,22)
+The weight of the shortest way from 4 to 23 is 101
+(4,16,14,19,25,23)
+There is no way from 4 to 24.
+The weight of the shortest way from 4 to 25 is 76
+(4,16,14,19,25)
+The weight of the shortest way from 4 to 26 is 89
+(4,16,13,26)
+The weight of the shortest way from 4 to 27 is 162
+(4,16,13,6,3,27)
+The weight of the shortest way from 5 to 1 is 78
+(5,21,16,14,17,1)
+There is no way from 5 to 2.
+The weight of the shortest way from 5 to 3 is 63
+(5,6,3)
+The weight of the shortest way from 5 to 4 is 58
+(5,21,8,4)
+The weight of the shortest way from 5 to 6 is 20
+(5,6)
+There is no way from 5 to 7.
+The weight of the shortest way from 5 to 8 is 24
+(5,21,8)
+There is no way from 5 to 9.
+There is no way from 5 to 10.
+There is no way from 5 to 11.
+There is no way from 5 to 12.
+The weight of the shortest way from 5 to 13 is 26
+(5,21,16,13)
+The weight of the shortest way from 5 to 14 is 46
+(5,21,16,14)
+The weight of the shortest way from 5 to 15 is 85
+(5,21,16,14,17,1,15)
+The weight of the shortest way from 5 to 16 is 17
+(5,21,16)
+The weight of the shortest way from 5 to 17 is 48
+(5,21,16,14,17)
+The weight of the shortest way from 5 to 18 is 88
+(5,21,16,13,26,18)
+The weight of the shortest way from 5 to 19 is 51
+(5,21,16,14,19)
+The weight of the shortest way from 5 to 20 is 130
+(5,21,16,13,26,18,20)
+The weight of the shortest way from 5 to 21 is 13
+(5,21)
+The weight of the shortest way from 5 to 22 is 31
+(5,21,8,22)
+The weight of the shortest way from 5 to 23 is 85
+(5,21,16,14,19,25,23)
+There is no way from 5 to 24.
+The weight of the shortest way from 5 to 25 is 60
+(5,21,16,14,19,25)
+The weight of the shortest way from 5 to 26 is 73
+(5,21,16,13,26)
+The weight of the shortest way from 5 to 27 is 95
+(5,6,3,27)
+The weight of the shortest way from 6 to 1 is 190
+(6,3,27,25,5,21,16,14,17,1)
+There is no way from 6 to 2.
+The weight of the shortest way from 6 to 3 is 43
+(6,3)
+The weight of the shortest way from 6 to 4 is 170
+(6,3,27,25,5,21,8,4)
+The weight of the shortest way from 6 to 5 is 112
+(6,3,27,25,5)
+There is no way from 6 to 7.
+The weight of the shortest way from 6 to 8 is 136
+(6,3,27,25,5,21,8)
+There is no way from 6 to 9.
+There is no way from 6 to 10.
+There is no way from 6 to 11.
+There is no way from 6 to 12.
+The weight of the shortest way from 6 to 13 is 35
+(6,13)
+The weight of the shortest way from 6 to 14 is 158
+(6,3,27,25,5,21,16,14)
+The weight of the shortest way from 6 to 15 is 197
+(6,3,27,25,5,21,16,14,17,1,15)
+The weight of the shortest way from 6 to 16 is 129
+(6,3,27,25,5,21,16)
+The weight of the shortest way from 6 to 17 is 160
+(6,3,27,25,5,21,16,14,17)
+The weight of the shortest way from 6 to 18 is 73
+(6,3,26,18)
+The weight of the shortest way from 6 to 19 is 163
+(6,3,27,25,5,21,16,14,19)
+The weight of the shortest way from 6 to 20 is 115
+(6,3,26,18,20)
+The weight of the shortest way from 6 to 21 is 125
+(6,3,27,25,5,21)
+The weight of the shortest way from 6 to 22 is 143
+(6,3,27,25,5,21,8,22)
+The weight of the shortest way from 6 to 23 is 127
+(6,3,27,25,23)
+There is no way from 6 to 24.
+The weight of the shortest way from 6 to 25 is 102
+(6,3,27,25)
+The weight of the shortest way from 6 to 26 is 58
+(6,3,26)
+The weight of the shortest way from 6 to 27 is 75
+(6,3,27)
+The weight of the shortest way from 7 to 1 is 86
+(7,5,21,16,14,17,1)
+There is no way from 7 to 2.
+The weight of the shortest way from 7 to 3 is 71
+(7,5,6,3)
+The weight of the shortest way from 7 to 4 is 66
+(7,5,21,8,4)
+The weight of the shortest way from 7 to 5 is 8
+(7,5)
+The weight of the shortest way from 7 to 6 is 28
+(7,5,6)
+The weight of the shortest way from 7 to 8 is 32
+(7,5,21,8)
+There is no way from 7 to 9.
+There is no way from 7 to 10.
+The weight of the shortest way from 7 to 11 is 6
+(7,11)
+There is no way from 7 to 12.
+The weight of the shortest way from 7 to 13 is 34
+(7,5,21,16,13)
+The weight of the shortest way from 7 to 14 is 54
+(7,5,21,16,14)
+The weight of the shortest way from 7 to 15 is 93
+(7,5,21,16,14,17,1,15)
+The weight of the shortest way from 7 to 16 is 25
+(7,5,21,16)
+The weight of the shortest way from 7 to 17 is 56
+(7,5,21,16,14,17)
+The weight of the shortest way from 7 to 18 is 96
+(7,5,21,16,13,26,18)
+The weight of the shortest way from 7 to 19 is 59
+(7,5,21,16,14,19)
+The weight of the shortest way from 7 to 20 is 138
+(7,5,21,16,13,26,18,20)
+The weight of the shortest way from 7 to 21 is 21
+(7,5,21)
+The weight of the shortest way from 7 to 22 is 39
+(7,5,21,8,22)
+The weight of the shortest way from 7 to 23 is 47
+(7,11,23)
+There is no way from 7 to 24.
+The weight of the shortest way from 7 to 25 is 39
+(7,11,25)
+The weight of the shortest way from 7 to 26 is 81
+(7,5,21,16,13,26)
+The weight of the shortest way from 7 to 27 is 103
+(7,5,6,3,27)
+The weight of the shortest way from 8 to 1 is 80
+(8,22,17,1)
+There is no way from 8 to 2.
+The weight of the shortest way from 8 to 3 is 123
+(8,22,19,25,5,6,3)
+The weight of the shortest way from 8 to 4 is 34
+(8,4)
+The weight of the shortest way from 8 to 5 is 60
+(8,22,19,25,5)
+The weight of the shortest way from 8 to 6 is 80
+(8,22,19,25,5,6)
+There is no way from 8 to 7.
+There is no way from 8 to 9.
+There is no way from 8 to 10.
+There is no way from 8 to 11.
+There is no way from 8 to 12.
+The weight of the shortest way from 8 to 13 is 76
+(8,4,16,13)
+The weight of the shortest way from 8 to 14 is 95
+(8,22,17,1,15,14)
+The weight of the shortest way from 8 to 15 is 87
+(8,22,17,1,15)
+The weight of the shortest way from 8 to 16 is 67
+(8,4,16)
+The weight of the shortest way from 8 to 17 is 50
+(8,22,17)
+The weight of the shortest way from 8 to 18 is 138
+(8,4,16,13,26,18)
+The weight of the shortest way from 8 to 19 is 41
+(8,22,19)
+The weight of the shortest way from 8 to 20 is 180
+(8,4,16,13,26,18,20)
+The weight of the shortest way from 8 to 21 is 73
+(8,22,19,25,5,21)
+The weight of the shortest way from 8 to 22 is 7
+(8,22)
+The weight of the shortest way from 8 to 23 is 75
+(8,22,19,25,23)
+There is no way from 8 to 24.
+The weight of the shortest way from 8 to 25 is 50
+(8,22,19,25)
+The weight of the shortest way from 8 to 26 is 123
+(8,4,16,13,26)
+The weight of the shortest way from 8 to 27 is 155
+(8,22,19,25,5,6,3,27)
+The weight of the shortest way from 9 to 1 is 99
+(9,16,14,17,1)
+There is no way from 9 to 2.
+The weight of the shortest way from 9 to 3 is 90
+(9,6,3)
+The weight of the shortest way from 9 to 4 is 149
+(9,16,14,19,25,5,21,8,4)
+The weight of the shortest way from 9 to 5 is 91
+(9,16,14,19,25,5)
+The weight of the shortest way from 9 to 6 is 47
+(9,6)
+There is no way from 9 to 7.
+The weight of the shortest way from 9 to 8 is 115
+(9,16,14,19,25,5,21,8)
+There is no way from 9 to 10.
+There is no way from 9 to 11.
+There is no way from 9 to 12.
+The weight of the shortest way from 9 to 13 is 47
+(9,16,13)
+The weight of the shortest way from 9 to 14 is 67
+(9,16,14)
+The weight of the shortest way from 9 to 15 is 106
+(9,16,14,17,1,15)
+The weight of the shortest way from 9 to 16 is 38
+(9,16)
+The weight of the shortest way from 9 to 17 is 69
+(9,16,14,17)
+The weight of the shortest way from 9 to 18 is 109
+(9,16,13,26,18)
+The weight of the shortest way from 9 to 19 is 72
+(9,16,14,19)
+The weight of the shortest way from 9 to 20 is 151
+(9,16,13,26,18,20)
+The weight of the shortest way from 9 to 21 is 104
+(9,16,14,19,25,5,21)
+The weight of the shortest way from 9 to 22 is 122
+(9,16,14,19,25,5,21,8,22)
+The weight of the shortest way from 9 to 23 is 106
+(9,16,14,19,25,23)
+There is no way from 9 to 24.
+The weight of the shortest way from 9 to 25 is 81
+(9,16,14,19,25)
+The weight of the shortest way from 9 to 26 is 94
+(9,16,13,26)
+The weight of the shortest way from 9 to 27 is 122
+(9,6,3,27)
+The weight of the shortest way from 10 to 1 is 111
+(10,21,16,14,17,1)
+There is no way from 10 to 2.
+The weight of the shortest way from 10 to 3 is 28
+(10,3)
+The weight of the shortest way from 10 to 4 is 91
+(10,21,8,4)
+The weight of the shortest way from 10 to 5 is 97
+(10,3,27,25,5)
+The weight of the shortest way from 10 to 6 is 69
+(10,3,26,6)
+There is no way from 10 to 7.
+The weight of the shortest way from 10 to 8 is 57
+(10,21,8)
+There is no way from 10 to 9.
+There is no way from 10 to 11.
+There is no way from 10 to 12.
+The weight of the shortest way from 10 to 13 is 59
+(10,21,16,13)
+The weight of the shortest way from 10 to 14 is 79
+(10,21,16,14)
+The weight of the shortest way from 10 to 15 is 118
+(10,21,16,14,17,1,15)
+The weight of the shortest way from 10 to 16 is 50
+(10,21,16)
+The weight of the shortest way from 10 to 17 is 81
+(10,21,16,14,17)
+The weight of the shortest way from 10 to 18 is 58
+(10,3,26,18)
+The weight of the shortest way from 10 to 19 is 84
+(10,21,16,14,19)
+The weight of the shortest way from 10 to 20 is 100
+(10,3,26,18,20)
+The weight of the shortest way from 10 to 21 is 46
+(10,21)
+The weight of the shortest way from 10 to 22 is 64
+(10,21,8,22)
+The weight of the shortest way from 10 to 23 is 112
+(10,3,27,25,23)
+There is no way from 10 to 24.
+The weight of the shortest way from 10 to 25 is 87
+(10,3,27,25)
+The weight of the shortest way from 10 to 26 is 43
+(10,3,26)
+The weight of the shortest way from 10 to 27 is 60
+(10,3,27)
+The weight of the shortest way from 11 to 1 is 121
+(11,25,5,21,16,14,17,1)
+There is no way from 11 to 2.
+The weight of the shortest way from 11 to 3 is 106
+(11,25,5,6,3)
+The weight of the shortest way from 11 to 4 is 101
+(11,25,5,21,8,4)
+The weight of the shortest way from 11 to 5 is 43
+(11,25,5)
+The weight of the shortest way from 11 to 6 is 63
+(11,25,5,6)
+There is no way from 11 to 7.
+The weight of the shortest way from 11 to 8 is 67
+(11,25,5,21,8)
+There is no way from 11 to 9.
+There is no way from 11 to 10.
+There is no way from 11 to 12.
+The weight of the shortest way from 11 to 13 is 69
+(11,25,5,21,16,13)
+The weight of the shortest way from 11 to 14 is 89
+(11,25,5,21,16,14)
+The weight of the shortest way from 11 to 15 is 128
+(11,25,5,21,16,14,17,1,15)
+The weight of the shortest way from 11 to 16 is 60
+(11,25,5,21,16)
+The weight of the shortest way from 11 to 17 is 91
+(11,25,5,21,16,14,17)
+The weight of the shortest way from 11 to 18 is 131
+(11,25,5,21,16,13,26,18)
+The weight of the shortest way from 11 to 19 is 94
+(11,25,5,21,16,14,19)
+The weight of the shortest way from 11 to 20 is 173
+(11,25,5,21,16,13,26,18,20)
+The weight of the shortest way from 11 to 21 is 56
+(11,25,5,21)
+The weight of the shortest way from 11 to 22 is 74
+(11,25,5,21,8,22)
+The weight of the shortest way from 11 to 23 is 41
+(11,23)
+There is no way from 11 to 24.
+The weight of the shortest way from 11 to 25 is 33
+(11,25)
+The weight of the shortest way from 11 to 26 is 116
+(11,25,5,21,16,13,26)
+The weight of the shortest way from 11 to 27 is 138
+(11,25,5,6,3,27)
+The weight of the shortest way from 12 to 1 is 102
+(12,25,5,21,16,14,17,1)
+There is no way from 12 to 2.
+The weight of the shortest way from 12 to 3 is 87
+(12,25,5,6,3)
+The weight of the shortest way from 12 to 4 is 82
+(12,25,5,21,8,4)
+The weight of the shortest way from 12 to 5 is 24
+(12,25,5)
+The weight of the shortest way from 12 to 6 is 44
+(12,25,5,6)
+There is no way from 12 to 7.
+The weight of the shortest way from 12 to 8 is 48
+(12,25,5,21,8)
+There is no way from 12 to 9.
+There is no way from 12 to 10.
+There is no way from 12 to 11.
+The weight of the shortest way from 12 to 13 is 50
+(12,25,5,21,16,13)
+The weight of the shortest way from 12 to 14 is 70
+(12,25,5,21,16,14)
+The weight of the shortest way from 12 to 15 is 109
+(12,25,5,21,16,14,17,1,15)
+The weight of the shortest way from 12 to 16 is 41
+(12,25,5,21,16)
+The weight of the shortest way from 12 to 17 is 72
+(12,25,5,21,16,14,17)
+The weight of the shortest way from 12 to 18 is 73
+(12,24,18)
+The weight of the shortest way from 12 to 19 is 75
+(12,25,5,21,16,14,19)
+The weight of the shortest way from 12 to 20 is 115
+(12,24,18,20)
+The weight of the shortest way from 12 to 21 is 37
+(12,25,5,21)
+The weight of the shortest way from 12 to 22 is 55
+(12,25,5,21,8,22)
+The weight of the shortest way from 12 to 23 is 39
+(12,25,23)
+The weight of the shortest way from 12 to 24 is 41
+(12,24)
+The weight of the shortest way from 12 to 25 is 14
+(12,25)
+The weight of the shortest way from 12 to 26 is 97
+(12,25,5,21,16,13,26)
+The weight of the shortest way from 12 to 27 is 119
+(12,25,5,6,3,27)
+The weight of the shortest way from 13 to 1 is 197
+(13,26,18,20,5,21,16,14,17,1)
+There is no way from 13 to 2.
+The weight of the shortest way from 13 to 3 is 88
+(13,6,3)
+The weight of the shortest way from 13 to 4 is 177
+(13,26,18,20,5,21,8,4)
+The weight of the shortest way from 13 to 5 is 119
+(13,26,18,20,5)
+The weight of the shortest way from 13 to 6 is 45
+(13,6)
+There is no way from 13 to 7.
+The weight of the shortest way from 13 to 8 is 143
+(13,26,18,20,5,21,8)
+There is no way from 13 to 9.
+There is no way from 13 to 10.
+There is no way from 13 to 11.
+There is no way from 13 to 12.
+The weight of the shortest way from 13 to 14 is 165
+(13,26,18,20,5,21,16,14)
+The weight of the shortest way from 13 to 15 is 204
+(13,26,18,20,5,21,16,14,17,1,15)
+The weight of the shortest way from 13 to 16 is 136
+(13,26,18,20,5,21,16)
+The weight of the shortest way from 13 to 17 is 167
+(13,26,18,20,5,21,16,14,17)
+The weight of the shortest way from 13 to 18 is 62
+(13,26,18)
+The weight of the shortest way from 13 to 19 is 170
+(13,26,18,20,5,21,16,14,19)
+The weight of the shortest way from 13 to 20 is 104
+(13,26,18,20)
+The weight of the shortest way from 13 to 21 is 132
+(13,26,18,20,5,21)
+The weight of the shortest way from 13 to 22 is 150
+(13,26,18,20,5,21,8,22)
+The weight of the shortest way from 13 to 23 is 172
+(13,6,3,27,25,23)
+There is no way from 13 to 24.
+The weight of the shortest way from 13 to 25 is 147
+(13,6,3,27,25)
+The weight of the shortest way from 13 to 26 is 47
+(13,26)
+The weight of the shortest way from 13 to 27 is 120
+(13,6,3,27)
+The weight of the shortest way from 14 to 1 is 32
+(14,17,1)
+There is no way from 14 to 2.
+The weight of the shortest way from 14 to 3 is 87
+(14,19,25,5,6,3)
+The weight of the shortest way from 14 to 4 is 82
+(14,19,25,5,21,8,4)
+The weight of the shortest way from 14 to 5 is 24
+(14,19,25,5)
+The weight of the shortest way from 14 to 6 is 44
+(14,19,25,5,6)
+There is no way from 14 to 7.
+The weight of the shortest way from 14 to 8 is 48
+(14,19,25,5,21,8)
+There is no way from 14 to 9.
+There is no way from 14 to 10.
+There is no way from 14 to 11.
+There is no way from 14 to 12.
+The weight of the shortest way from 14 to 13 is 50
+(14,19,25,5,21,16,13)
+The weight of the shortest way from 14 to 15 is 39
+(14,17,1,15)
+The weight of the shortest way from 14 to 16 is 41
+(14,19,25,5,21,16)
+The weight of the shortest way from 14 to 17 is 2
+(14,17)
+The weight of the shortest way from 14 to 18 is 112
+(14,19,25,5,21,16,13,26,18)
+The weight of the shortest way from 14 to 19 is 5
+(14,19)
+The weight of the shortest way from 14 to 20 is 154
+(14,19,25,5,21,16,13,26,18,20)
+The weight of the shortest way from 14 to 21 is 37
+(14,19,25,5,21)
+The weight of the shortest way from 14 to 22 is 55
+(14,19,25,5,21,8,22)
+The weight of the shortest way from 14 to 23 is 39
+(14,19,25,23)
+There is no way from 14 to 24.
+The weight of the shortest way from 14 to 25 is 14
+(14,19,25)
+The weight of the shortest way from 14 to 26 is 97
+(14,19,25,5,21,16,13,26)
+The weight of the shortest way from 14 to 27 is 119
+(14,19,25,5,6,3,27)
+The weight of the shortest way from 15 to 1 is 40
+(15,14,17,1)
+There is no way from 15 to 2.
+The weight of the shortest way from 15 to 3 is 95
+(15,14,19,25,5,6,3)
+The weight of the shortest way from 15 to 4 is 90
+(15,14,19,25,5,21,8,4)
+The weight of the shortest way from 15 to 5 is 32
+(15,14,19,25,5)
+The weight of the shortest way from 15 to 6 is 52
+(15,14,19,25,5,6)
+There is no way from 15 to 7.
+The weight of the shortest way from 15 to 8 is 56
+(15,14,19,25,5,21,8)
+There is no way from 15 to 9.
+There is no way from 15 to 10.
+There is no way from 15 to 11.
+There is no way from 15 to 12.
+The weight of the shortest way from 15 to 13 is 58
+(15,14,19,25,5,21,16,13)
+The weight of the shortest way from 15 to 14 is 8
+(15,14)
+The weight of the shortest way from 15 to 16 is 49
+(15,14,19,25,5,21,16)
+The weight of the shortest way from 15 to 17 is 10
+(15,14,17)
+The weight of the shortest way from 15 to 18 is 120
+(15,14,19,25,5,21,16,13,26,18)
+The weight of the shortest way from 15 to 19 is 13
+(15,14,19)
+The weight of the shortest way from 15 to 20 is 162
+(15,14,19,25,5,21,16,13,26,18,20)
+The weight of the shortest way from 15 to 21 is 45
+(15,14,19,25,5,21)
+The weight of the shortest way from 15 to 22 is 63
+(15,14,19,25,5,21,8,22)
+The weight of the shortest way from 15 to 23 is 47
+(15,14,19,25,23)
+There is no way from 15 to 24.
+The weight of the shortest way from 15 to 25 is 22
+(15,14,19,25)
+The weight of the shortest way from 15 to 26 is 105
+(15,14,19,25,5,21,16,13,26)
+The weight of the shortest way from 15 to 27 is 127
+(15,14,19,25,5,6,3,27)
+The weight of the shortest way from 16 to 1 is 61
+(16,14,17,1)
+There is no way from 16 to 2.
+The weight of the shortest way from 16 to 3 is 97
+(16,13,6,3)
+The weight of the shortest way from 16 to 4 is 111
+(16,14,19,25,5,21,8,4)
+The weight of the shortest way from 16 to 5 is 53
+(16,14,19,25,5)
+The weight of the shortest way from 16 to 6 is 54
+(16,13,6)
+There is no way from 16 to 7.
+The weight of the shortest way from 16 to 8 is 77
+(16,14,19,25,5,21,8)
+There is no way from 16 to 9.
+There is no way from 16 to 10.
+There is no way from 16 to 11.
+There is no way from 16 to 12.
+The weight of the shortest way from 16 to 13 is 9
+(16,13)
+The weight of the shortest way from 16 to 14 is 29
+(16,14)
+The weight of the shortest way from 16 to 15 is 68
+(16,14,17,1,15)
+The weight of the shortest way from 16 to 17 is 31
+(16,14,17)
+The weight of the shortest way from 16 to 18 is 71
+(16,13,26,18)
+The weight of the shortest way from 16 to 19 is 34
+(16,14,19)
+The weight of the shortest way from 16 to 20 is 113
+(16,13,26,18,20)
+The weight of the shortest way from 16 to 21 is 66
+(16,14,19,25,5,21)
+The weight of the shortest way from 16 to 22 is 84
+(16,14,19,25,5,21,8,22)
+The weight of the shortest way from 16 to 23 is 68
+(16,14,19,25,23)
+There is no way from 16 to 24.
+The weight of the shortest way from 16 to 25 is 43
+(16,14,19,25)
+The weight of the shortest way from 16 to 26 is 56
+(16,13,26)
+The weight of the shortest way from 16 to 27 is 129
+(16,13,6,3,27)
+The weight of the shortest way from 17 to 1 is 30
+(17,1)
+There is no way from 17 to 2.
+The weight of the shortest way from 17 to 3 is 132
+(17,1,15,14,19,25,5,6,3)
+The weight of the shortest way from 17 to 4 is 127
+(17,1,15,14,19,25,5,21,8,4)
+The weight of the shortest way from 17 to 5 is 69
+(17,1,15,14,19,25,5)
+The weight of the shortest way from 17 to 6 is 89
+(17,1,15,14,19,25,5,6)
+There is no way from 17 to 7.
+The weight of the shortest way from 17 to 8 is 93
+(17,1,15,14,19,25,5,21,8)
+There is no way from 17 to 9.
+There is no way from 17 to 10.
+There is no way from 17 to 11.
+There is no way from 17 to 12.
+The weight of the shortest way from 17 to 13 is 68
+(17,1,16,13)
+The weight of the shortest way from 17 to 14 is 45
+(17,1,15,14)
+The weight of the shortest way from 17 to 15 is 37
+(17,1,15)
+The weight of the shortest way from 17 to 16 is 59
+(17,1,16)
+The weight of the shortest way from 17 to 18 is 130
+(17,1,16,13,26,18)
+The weight of the shortest way from 17 to 19 is 50
+(17,1,15,14,19)
+The weight of the shortest way from 17 to 20 is 172
+(17,1,16,13,26,18,20)
+The weight of the shortest way from 17 to 21 is 82
+(17,1,15,14,19,25,5,21)
+The weight of the shortest way from 17 to 22 is 100
+(17,1,15,14,19,25,5,21,8,22)
+The weight of the shortest way from 17 to 23 is 84
+(17,1,15,14,19,25,23)
+There is no way from 17 to 24.
+The weight of the shortest way from 17 to 25 is 59
+(17,1,15,14,19,25)
+The weight of the shortest way from 17 to 26 is 115
+(17,1,16,13,26)
+The weight of the shortest way from 17 to 27 is 164
+(17,1,15,14,19,25,5,6,3,27)
+The weight of the shortest way from 18 to 1 is 135
+(18,20,5,21,16,14,17,1)
+There is no way from 18 to 2.
+The weight of the shortest way from 18 to 3 is 120
+(18,20,5,6,3)
+The weight of the shortest way from 18 to 4 is 115
+(18,20,5,21,8,4)
+The weight of the shortest way from 18 to 5 is 57
+(18,20,5)
+The weight of the shortest way from 18 to 6 is 77
+(18,20,5,6)
+There is no way from 18 to 7.
+The weight of the shortest way from 18 to 8 is 81
+(18,20,5,21,8)
+There is no way from 18 to 9.
+There is no way from 18 to 10.
+There is no way from 18 to 11.
+There is no way from 18 to 12.
+The weight of the shortest way from 18 to 13 is 83
+(18,20,5,21,16,13)
+The weight of the shortest way from 18 to 14 is 103
+(18,20,5,21,16,14)
+The weight of the shortest way from 18 to 15 is 142
+(18,20,5,21,16,14,17,1,15)
+The weight of the shortest way from 18 to 16 is 74
+(18,20,5,21,16)
+The weight of the shortest way from 18 to 17 is 105
+(18,20,5,21,16,14,17)
+The weight of the shortest way from 18 to 19 is 108
+(18,20,5,21,16,14,19)
+The weight of the shortest way from 18 to 20 is 42
+(18,20)
+The weight of the shortest way from 18 to 21 is 70
+(18,20,5,21)
+The weight of the shortest way from 18 to 22 is 88
+(18,20,5,21,8,22)
+The weight of the shortest way from 18 to 23 is 142
+(18,20,5,21,16,14,19,25,23)
+There is no way from 18 to 24.
+The weight of the shortest way from 18 to 25 is 117
+(18,20,5,21,16,14,19,25)
+The weight of the shortest way from 18 to 26 is 130
+(18,20,5,21,16,13,26)
+The weight of the shortest way from 18 to 27 is 152
+(18,20,5,6,3,27)
+The weight of the shortest way from 19 to 1 is 97
+(19,25,5,21,16,14,17,1)
+There is no way from 19 to 2.
+The weight of the shortest way from 19 to 3 is 82
+(19,25,5,6,3)
+The weight of the shortest way from 19 to 4 is 77
+(19,25,5,21,8,4)
+The weight of the shortest way from 19 to 5 is 19
+(19,25,5)
+The weight of the shortest way from 19 to 6 is 39
+(19,25,5,6)
+There is no way from 19 to 7.
+The weight of the shortest way from 19 to 8 is 43
+(19,25,5,21,8)
+There is no way from 19 to 9.
+There is no way from 19 to 10.
+There is no way from 19 to 11.
+There is no way from 19 to 12.
+The weight of the shortest way from 19 to 13 is 45
+(19,25,5,21,16,13)
+The weight of the shortest way from 19 to 14 is 65
+(19,25,5,21,16,14)
+The weight of the shortest way from 19 to 15 is 104
+(19,25,5,21,16,14,17,1,15)
+The weight of the shortest way from 19 to 16 is 36
+(19,25,5,21,16)
+The weight of the shortest way from 19 to 17 is 67
+(19,25,5,21,16,14,17)
+The weight of the shortest way from 19 to 18 is 107
+(19,25,5,21,16,13,26,18)
+The weight of the shortest way from 19 to 20 is 149
+(19,25,5,21,16,13,26,18,20)
+The weight of the shortest way from 19 to 21 is 32
+(19,25,5,21)
+The weight of the shortest way from 19 to 22 is 50
+(19,25,5,21,8,22)
+The weight of the shortest way from 19 to 23 is 34
+(19,25,23)
+There is no way from 19 to 24.
+The weight of the shortest way from 19 to 25 is 9
+(19,25)
+The weight of the shortest way from 19 to 26 is 92
+(19,25,5,21,16,13,26)
+The weight of the shortest way from 19 to 27 is 114
+(19,25,5,6,3,27)
+The weight of the shortest way from 20 to 1 is 93
+(20,5,21,16,14,17,1)
+There is no way from 20 to 2.
+The weight of the shortest way from 20 to 3 is 78
+(20,5,6,3)
+The weight of the shortest way from 20 to 4 is 73
+(20,5,21,8,4)
+The weight of the shortest way from 20 to 5 is 15
+(20,5)
+The weight of the shortest way from 20 to 6 is 35
+(20,5,6)
+There is no way from 20 to 7.
+The weight of the shortest way from 20 to 8 is 39
+(20,5,21,8)
+There is no way from 20 to 9.
+There is no way from 20 to 10.
+There is no way from 20 to 11.
+There is no way from 20 to 12.
+The weight of the shortest way from 20 to 13 is 41
+(20,5,21,16,13)
+The weight of the shortest way from 20 to 14 is 61
+(20,5,21,16,14)
+The weight of the shortest way from 20 to 15 is 100
+(20,5,21,16,14,17,1,15)
+The weight of the shortest way from 20 to 16 is 32
+(20,5,21,16)
+The weight of the shortest way from 20 to 17 is 63
+(20,5,21,16,14,17)
+The weight of the shortest way from 20 to 18 is 103
+(20,5,21,16,13,26,18)
+The weight of the shortest way from 20 to 19 is 66
+(20,5,21,16,14,19)
+The weight of the shortest way from 20 to 21 is 28
+(20,5,21)
+The weight of the shortest way from 20 to 22 is 46
+(20,5,21,8,22)
+The weight of the shortest way from 20 to 23 is 100
+(20,5,21,16,14,19,25,23)
+There is no way from 20 to 24.
+The weight of the shortest way from 20 to 25 is 75
+(20,5,21,16,14,19,25)
+The weight of the shortest way from 20 to 26 is 88
+(20,5,21,16,13,26)
+The weight of the shortest way from 20 to 27 is 110
+(20,5,6,3,27)
+The weight of the shortest way from 21 to 1 is 65
+(21,16,14,17,1)
+There is no way from 21 to 2.
+The weight of the shortest way from 21 to 3 is 101
+(21,16,13,6,3)
+The weight of the shortest way from 21 to 4 is 45
+(21,8,4)
+The weight of the shortest way from 21 to 5 is 57
+(21,16,14,19,25,5)
+The weight of the shortest way from 21 to 6 is 58
+(21,16,13,6)
+There is no way from 21 to 7.
+The weight of the shortest way from 21 to 8 is 11
+(21,8)
+There is no way from 21 to 9.
+There is no way from 21 to 10.
+There is no way from 21 to 11.
+There is no way from 21 to 12.
+The weight of the shortest way from 21 to 13 is 13
+(21,16,13)
+The weight of the shortest way from 21 to 14 is 33
+(21,16,14)
+The weight of the shortest way from 21 to 15 is 72
+(21,16,14,17,1,15)
+The weight of the shortest way from 21 to 16 is 4
+(21,16)
+The weight of the shortest way from 21 to 17 is 35
+(21,16,14,17)
+The weight of the shortest way from 21 to 18 is 75
+(21,16,13,26,18)
+The weight of the shortest way from 21 to 19 is 38
+(21,16,14,19)
+The weight of the shortest way from 21 to 20 is 117
+(21,16,13,26,18,20)
+The weight of the shortest way from 21 to 22 is 18
+(21,8,22)
+The weight of the shortest way from 21 to 23 is 72
+(21,16,14,19,25,23)
+There is no way from 21 to 24.
+The weight of the shortest way from 21 to 25 is 47
+(21,16,14,19,25)
+The weight of the shortest way from 21 to 26 is 60
+(21,16,13,26)
+The weight of the shortest way from 21 to 27 is 133
+(21,16,13,6,3,27)
+The weight of the shortest way from 22 to 1 is 73
+(22,17,1)
+There is no way from 22 to 2.
+The weight of the shortest way from 22 to 3 is 116
+(22,19,25,5,6,3)
+The weight of the shortest way from 22 to 4 is 111
+(22,19,25,5,21,8,4)
+The weight of the shortest way from 22 to 5 is 53
+(22,19,25,5)
+The weight of the shortest way from 22 to 6 is 73
+(22,19,25,5,6)
+There is no way from 22 to 7.
+The weight of the shortest way from 22 to 8 is 77
+(22,19,25,5,21,8)
+There is no way from 22 to 9.
+There is no way from 22 to 10.
+There is no way from 22 to 11.
+There is no way from 22 to 12.
+The weight of the shortest way from 22 to 13 is 79
+(22,19,25,5,21,16,13)
+The weight of the shortest way from 22 to 14 is 88
+(22,17,1,15,14)
+The weight of the shortest way from 22 to 15 is 80
+(22,17,1,15)
+The weight of the shortest way from 22 to 16 is 70
+(22,19,25,5,21,16)
+The weight of the shortest way from 22 to 17 is 43
+(22,17)
+The weight of the shortest way from 22 to 18 is 141
+(22,19,25,5,21,16,13,26,18)
+The weight of the shortest way from 22 to 19 is 34
+(22,19)
+The weight of the shortest way from 22 to 20 is 183
+(22,19,25,5,21,16,13,26,18,20)
+The weight of the shortest way from 22 to 21 is 66
+(22,19,25,5,21)
+The weight of the shortest way from 22 to 23 is 68
+(22,19,25,23)
+There is no way from 22 to 24.
+The weight of the shortest way from 22 to 25 is 43
+(22,19,25)
+The weight of the shortest way from 22 to 26 is 126
+(22,19,25,5,21,16,13,26)
+The weight of the shortest way from 22 to 27 is 148
+(22,19,25,5,6,3,27)
+The weight of the shortest way from 23 to 1 is 88
+(23,16,14,17,1)
+There is no way from 23 to 2.
+The weight of the shortest way from 23 to 3 is 124
+(23,16,13,6,3)
+The weight of the shortest way from 23 to 4 is 138
+(23,16,14,19,25,5,21,8,4)
+The weight of the shortest way from 23 to 5 is 80
+(23,16,14,19,25,5)
+The weight of the shortest way from 23 to 6 is 81
+(23,16,13,6)
+There is no way from 23 to 7.
+The weight of the shortest way from 23 to 8 is 104
+(23,16,14,19,25,5,21,8)
+There is no way from 23 to 9.
+There is no way from 23 to 10.
+There is no way from 23 to 11.
+There is no way from 23 to 12.
+The weight of the shortest way from 23 to 13 is 36
+(23,16,13)
+The weight of the shortest way from 23 to 14 is 56
+(23,16,14)
+The weight of the shortest way from 23 to 15 is 95
+(23,16,14,17,1,15)
+The weight of the shortest way from 23 to 16 is 27
+(23,16)
+The weight of the shortest way from 23 to 17 is 58
+(23,16,14,17)
+The weight of the shortest way from 23 to 18 is 98
+(23,16,13,26,18)
+The weight of the shortest way from 23 to 19 is 61
+(23,16,14,19)
+The weight of the shortest way from 23 to 20 is 140
+(23,16,13,26,18,20)
+The weight of the shortest way from 23 to 21 is 93
+(23,16,14,19,25,5,21)
+The weight of the shortest way from 23 to 22 is 111
+(23,16,14,19,25,5,21,8,22)
+There is no way from 23 to 24.
+The weight of the shortest way from 23 to 25 is 70
+(23,16,14,19,25)
+The weight of the shortest way from 23 to 26 is 83
+(23,16,13,26)
+The weight of the shortest way from 23 to 27 is 156
+(23,16,13,6,3,27)
+The weight of the shortest way from 24 to 1 is 64
+(24,17,1)
+There is no way from 24 to 2.
+The weight of the shortest way from 24 to 3 is 152
+(24,18,20,5,6,3)
+The weight of the shortest way from 24 to 4 is 147
+(24,18,20,5,21,8,4)
+The weight of the shortest way from 24 to 5 is 89
+(24,18,20,5)
+The weight of the shortest way from 24 to 6 is 109
+(24,18,20,5,6)
+There is no way from 24 to 7.
+The weight of the shortest way from 24 to 8 is 113
+(24,18,20,5,21,8)
+There is no way from 24 to 9.
+There is no way from 24 to 10.
+There is no way from 24 to 11.
+There is no way from 24 to 12.
+The weight of the shortest way from 24 to 13 is 102
+(24,17,1,16,13)
+The weight of the shortest way from 24 to 14 is 79
+(24,17,1,15,14)
+The weight of the shortest way from 24 to 15 is 71
+(24,17,1,15)
+The weight of the shortest way from 24 to 16 is 93
+(24,17,1,16)
+The weight of the shortest way from 24 to 17 is 34
+(24,17)
+The weight of the shortest way from 24 to 18 is 32
+(24,18)
+The weight of the shortest way from 24 to 19 is 84
+(24,17,1,15,14,19)
+The weight of the shortest way from 24 to 20 is 74
+(24,18,20)
+The weight of the shortest way from 24 to 21 is 102
+(24,18,20,5,21)
+The weight of the shortest way from 24 to 22 is 120
+(24,18,20,5,21,8,22)
+The weight of the shortest way from 24 to 23 is 118
+(24,17,1,15,14,19,25,23)
+The weight of the shortest way from 24 to 25 is 93
+(24,17,1,15,14,19,25)
+The weight of the shortest way from 24 to 26 is 149
+(24,17,1,16,13,26)
+The weight of the shortest way from 24 to 27 is 184
+(24,18,20,5,6,3,27)
+The weight of the shortest way from 25 to 1 is 88
+(25,5,21,16,14,17,1)
+There is no way from 25 to 2.
+The weight of the shortest way from 25 to 3 is 73
+(25,5,6,3)
+The weight of the shortest way from 25 to 4 is 68
+(25,5,21,8,4)
+The weight of the shortest way from 25 to 5 is 10
+(25,5)
+The weight of the shortest way from 25 to 6 is 30
+(25,5,6)
+There is no way from 25 to 7.
+The weight of the shortest way from 25 to 8 is 34
+(25,5,21,8)
+There is no way from 25 to 9.
+There is no way from 25 to 10.
+There is no way from 25 to 11.
+There is no way from 25 to 12.
+The weight of the shortest way from 25 to 13 is 36
+(25,5,21,16,13)
+The weight of the shortest way from 25 to 14 is 56
+(25,5,21,16,14)
+The weight of the shortest way from 25 to 15 is 95
+(25,5,21,16,14,17,1,15)
+The weight of the shortest way from 25 to 16 is 27
+(25,5,21,16)
+The weight of the shortest way from 25 to 17 is 58
+(25,5,21,16,14,17)
+The weight of the shortest way from 25 to 18 is 98
+(25,5,21,16,13,26,18)
+The weight of the shortest way from 25 to 19 is 61
+(25,5,21,16,14,19)
+The weight of the shortest way from 25 to 20 is 140
+(25,5,21,16,13,26,18,20)
+The weight of the shortest way from 25 to 21 is 23
+(25,5,21)
+The weight of the shortest way from 25 to 22 is 41
+(25,5,21,8,22)
+The weight of the shortest way from 25 to 23 is 25
+(25,23)
+There is no way from 25 to 24.
+The weight of the shortest way from 25 to 26 is 83
+(25,5,21,16,13,26)
+The weight of the shortest way from 25 to 27 is 105
+(25,5,6,3,27)
+The weight of the shortest way from 26 to 1 is 150
+(26,18,20,5,21,16,14,17,1)
+There is no way from 26 to 2.
+The weight of the shortest way from 26 to 3 is 69
+(26,6,3)
+The weight of the shortest way from 26 to 4 is 130
+(26,18,20,5,21,8,4)
+The weight of the shortest way from 26 to 5 is 72
+(26,18,20,5)
+The weight of the shortest way from 26 to 6 is 26
+(26,6)
+There is no way from 26 to 7.
+The weight of the shortest way from 26 to 8 is 96
+(26,18,20,5,21,8)
+There is no way from 26 to 9.
+There is no way from 26 to 10.
+There is no way from 26 to 11.
+There is no way from 26 to 12.
+The weight of the shortest way from 26 to 13 is 61
+(26,6,13)
+The weight of the shortest way from 26 to 14 is 118
+(26,18,20,5,21,16,14)
+The weight of the shortest way from 26 to 15 is 157
+(26,18,20,5,21,16,14,17,1,15)
+The weight of the shortest way from 26 to 16 is 89
+(26,18,20,5,21,16)
+The weight of the shortest way from 26 to 17 is 120
+(26,18,20,5,21,16,14,17)
+The weight of the shortest way from 26 to 18 is 15
+(26,18)
+The weight of the shortest way from 26 to 19 is 123
+(26,18,20,5,21,16,14,19)
+The weight of the shortest way from 26 to 20 is 57
+(26,18,20)
+The weight of the shortest way from 26 to 21 is 85
+(26,18,20,5,21)
+The weight of the shortest way from 26 to 22 is 103
+(26,18,20,5,21,8,22)
+The weight of the shortest way from 26 to 23 is 153
+(26,6,3,27,25,23)
+There is no way from 26 to 24.
+The weight of the shortest way from 26 to 25 is 128
+(26,6,3,27,25)
+The weight of the shortest way from 26 to 27 is 101
+(26,6,3,27)
+The weight of the shortest way from 27 to 1 is 115
+(27,25,5,21,16,14,17,1)
+There is no way from 27 to 2.
+The weight of the shortest way from 27 to 3 is 97
+(27,13,6,3)
+The weight of the shortest way from 27 to 4 is 95
+(27,25,5,21,8,4)
+The weight of the shortest way from 27 to 5 is 37
+(27,25,5)
+The weight of the shortest way from 27 to 6 is 54
+(27,13,6)
+There is no way from 27 to 7.
+The weight of the shortest way from 27 to 8 is 61
+(27,25,5,21,8)
+There is no way from 27 to 9.
+There is no way from 27 to 10.
+There is no way from 27 to 11.
+There is no way from 27 to 12.
+The weight of the shortest way from 27 to 13 is 9
+(27,13)
+The weight of the shortest way from 27 to 14 is 83
+(27,25,5,21,16,14)
+The weight of the shortest way from 27 to 15 is 122
+(27,25,5,21,16,14,17,1,15)
+The weight of the shortest way from 27 to 16 is 54
+(27,25,5,21,16)
+The weight of the shortest way from 27 to 17 is 85
+(27,25,5,21,16,14,17)
+The weight of the shortest way from 27 to 18 is 71
+(27,13,26,18)
+The weight of the shortest way from 27 to 19 is 88
+(27,25,5,21,16,14,19)
+The weight of the shortest way from 27 to 20 is 113
+(27,13,26,18,20)
+The weight of the shortest way from 27 to 21 is 50
+(27,25,5,21)
+The weight of the shortest way from 27 to 22 is 68
+(27,25,5,21,8,22)
+The weight of the shortest way from 27 to 23 is 52
+(27,25,23)
+There is no way from 27 to 24.
+The weight of the shortest way from 27 to 25 is 27
+(27,25)
+The weight of the shortest way from 27 to 26 is 56
+(27,13,26)
